@@ -1,6 +1,8 @@
+/* --- Estilos Gerais (para todas as telas) --- */
 html, body {
-  height: 100%; /* Isso é crucial para que o Flexbox funcione corretamente */
+  height: 100%;
   margin: 0;
+  font-family: 'Roboto', sans-serif; /* Fonte comum do Material Design */
 }
 
 body {
@@ -10,33 +12,29 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif; /* Use uma fonte semelhante ao Material Design */
   background-color: #f7f2fa; /* Cor de fundo para melhor visualização */
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
+/* --- Estilos do Header --- */
 .header {
-  background-color: #1f1f1f; /* Cor quase preta, como no Material Design */
-  color: #e6e0e9; /* Cor do texto claro */
+  background-color: #1f1f1f;
+  color: #e6e0e9;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
-  height: 50px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidade */
+  height: 64px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-bottom: 6px solid #3EB87D;
 }
 
-.logo {
-  text-align: center;
-  align-items: center;
-}
-
 .logo img {
-  height: 40px; /* Ajuste o tamanho da sua logo */
+  height: 40px;
 }
 
 .navigation {
   display: flex;
-  gap: 8px; /* Espaço entre os botões */
+  gap: 8px;
 }
 
 .nav-button {
@@ -53,96 +51,74 @@ body {
 
 .nav-button:hover,
 .nav-button:focus {
-  background-color: #38383a; /* Fundo sutil ao passar o mouse */
-  color: #3EB87D; /* Cor de destaque ao passar o mouse */
+  background-color: #38383a;
+  color: #3EB87D;
   outline: none;
 }
 
-.footer {
-  height: 30px;
-  background-color: #1f1f1f;
-  color: #e6e0e9;
-  
-  /* Flexbox para centralizar o texto */
-  display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  
-  margin-top: auto; /* Empurra o footer para a parte de baixo */
-}
-
-/* Opcional: Remova a margem padrão do parágrafo */
-.footer p {
-  font-size: 10px;
-  margin: 0;
-}
-
-.social-links {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
-
-.social-links a {
-  color: #d0bcff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-weight: 500;
-}
-
-.social-links a:hover {
-  color: #fff;
-}
-
+/* --- Estilos do Mapa (seu código) --- */
 .content-container {
-    flex: 1; /* Permite que o conteúdo principal ocupe todo o espaço disponível */
+  flex: 1; /* Permite que o conteúdo principal ocupe todo o espaço disponível */
 }
 
 .map-frame {
-    border: none; /* Remove a borda padrão do iframe */
-    width: 100%; /* Faz o iframe ocupar a largura total do container */
-    height: 100%; /* Define uma altura fixa para o mapa. Você pode ajustar esse valor. */
+  border: none;
+  width: 100%;
+  height: 100%;
 }
 
-/* --- Media Query para Mobile --- */
-/* Aplica estes estilos apenas em telas com no máximo 768px de largura */
-@media (max-width: 768px) {
+/* --- Estilos do Footer --- */
+.footer {
+  background-color: #1f1f1f;
+  color: #e6e0e9;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
 
+.footer p {
+  margin: 0;
+  font-size: 12px;
+}
+
+/* --- Media Query para Mobile (Telas pequenas) --- */
+@media (max-width: 768px) {
+  
   /* Fixa o header no topo */
-  .header-md3 {
+  .header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Usa a largura total da viewport */
+    width: 100%;
     z-index: 1000;
+    padding: 0 16px;
+  }
+
+  .nav-button {
+    padding: 8px 12px;
+    font-size: 13px; /* Opcional: diminui o tamanho da fonte para caber melhor */
+    padding-right: 20px;
   }
 
   /* Fixa o footer na parte de baixo */
-  .footer-md3 {
+  .footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw; /* Usa a largura total da viewport */
+    width: 100%;
     z-index: 1000;
   }
 
-  /* Adiciona espaçamento ao corpo para que o conteúdo não seja escondido */
+  /* Adiciona espaçamento ao corpo para o conteúdo não ser coberto */
   body {
-    padding-top: 64px; /* Substitua pelo valor da altura do seu header */
-    padding-bottom: 40px; /* Substitua pelo valor da altura do seu footer */
+    padding-top: 64px; /* Altura do header */
+    padding-bottom: 30px; /* Altura do footer */
   }
 
-  /*
-  IMPORTANTE: para garantir que o mapa não interaja com o header e footer
-  Você pode envolver o mapa em um container e aplicar o `padding` nele.
-  Ou apenas manter o `padding` no `body` como está acima.
-  */
-  
-  /* Exemplo de container para o mapa, se necessário */
-  .map-container {
-      margin: 64px 0 40px; /* Margem para o header e footer */
-      height: calc(100vh - 104px); /* A altura da tela menos a altura do header e footer */
-      width: 100vw;
+  /* Ajusta o espaçamento do conteúdo para que ele não fique "atrás" do header e footer */
+  .content-container {
+    padding: 0; /* Remove qualquer padding para o mapa ocupar a tela toda */
   }
 }
-
