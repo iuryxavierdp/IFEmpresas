@@ -109,7 +109,6 @@ body {
     align-items: center; /* Centers content vertically */
     flex-direction: column !important;
     line-height: 1.2;
-    padding: 10px;
   }
 
   /* Fixa o footer na parte de baixo */
@@ -141,4 +140,5 @@ body {
   }
 
 }
+
 
