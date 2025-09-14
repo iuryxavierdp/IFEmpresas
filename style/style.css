@@ -102,6 +102,10 @@ body {
 
   .nav-button {
     font-size: 13px; /* Opcional: diminui o tamanho da fonte para caber melhor */
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
   }
 
   /* Fixa o footer na parte de baixo */
@@ -131,4 +135,5 @@ body {
   .content-container {
     padding: 0; /* Remove qualquer padding para o mapa ocupar a tela toda */
   }
+
 }
