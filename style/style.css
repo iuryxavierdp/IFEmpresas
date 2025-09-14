@@ -104,3 +104,30 @@ body {
     height: 100%; /* Define uma altura fixa para o mapa. Você pode ajustar esse valor. */
 }
 
+/* --- Media Query para Mobile --- */
+/* Aplica estes estilos apenas em telas com no máximo 768px de largura */
+@media (max-width: 768px) {
+  .header-md3 {
+    position: fixed; /* Fixa o header no topo da tela */
+    top: 0; /* Alinha ao topo */
+    left: 0;
+    width: 100%; /* Ocupa a largura total */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    /* Adicione um padding na parte de baixo para evitar que o conteúdo fique escondido */
+    padding-bottom: 64px;
+  }
+
+  .footer-md3 {
+    position: fixed; /* Fixa o footer na parte de baixo */
+    bottom: 0; /* Alinha à parte de baixo */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* Adicione um espaçamento para o conteúdo principal não ser coberto */
+  body {
+    padding-top: 64px; /* Adiciona espaço no topo para o header */
+    padding-bottom: 40px; /* Adiciona espaço no rodapé para o footer */
+  }
+}
