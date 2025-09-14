@@ -101,7 +101,7 @@ a{
   }
 
   .nav-button {
-    padding: 8px 12px;
+    padding: 8px 5px;
     font-size: 13px; /* Opcional: diminui o tamanho da fonte para caber melhor */
     padding-right: 20px;
   }
@@ -130,6 +130,7 @@ a{
     padding: 0; /* Remove qualquer padding para o mapa ocupar a tela toda */
   }
 }
+
 
 
 
