@@ -118,7 +118,9 @@ a{
   .footer p{
     font-size: 8px;
   }
-  
+  .navigation {
+    gap: 0px;
+  }
   /* Adiciona espaçamento ao corpo para o conteúdo não ser coberto */
   body {
     padding-top: 64px; /* Altura do header */
@@ -130,6 +132,7 @@ a{
     padding: 0; /* Remove qualquer padding para o mapa ocupar a tela toda */
   }
 }
+
 
 
 
