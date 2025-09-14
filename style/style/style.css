@@ -25,6 +25,10 @@ body {
   border-bottom: 6px solid #3EB87D;
 }
 
+.header a{
+  text-decoration: none;
+}
+
 .logo {
   text-align: center;
   align-items: center;
@@ -130,4 +134,5 @@ body {
     padding-top: 64px; /* Adiciona espaço no topo para o header */
     padding-bottom: 40px; /* Adiciona espaço no rodapé para o footer */
   }
+
 }
