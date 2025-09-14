@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif; /* Use uma fonte semelhante ao Material Design */
   background-color: #f7f2fa; /* Cor de fundo para melhor visualização */
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .header {
@@ -145,3 +145,4 @@ body {
       width: 100vw;
   }
 }
+
