@@ -1,0 +1,3 @@
+Nome,Latitude,Longitude,Img
+Energisa,-21.38770859097071,-42.694171935932474,https://www.energisa.com.br/sites/energisa/files/styles/crop_mobile/public/images/news/Diermifran-4_0.jpg.webp?itok=nb3R3MFV
+Arena Horto,-21.375777150711308,-42.70998011516444,https://www.energisa.com.br/sites/energisa/files/styles/crop_mobile/public/images/news/Diermifran-4_0.jpg.webp?itok=nb3R3MFV

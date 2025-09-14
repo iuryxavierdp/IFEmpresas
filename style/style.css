@@ -1,0 +1,106 @@
+html, body {
+  height: 100%; /* Isso é crucial para que o Flexbox funcione corretamente */
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o corpo tenha pelo menos a altura total da janela do navegador */
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Use uma fonte semelhante ao Material Design */
+  background-color: #f7f2fa; /* Cor de fundo para melhor visualização */
+  overflow: hidden;
+}
+
+.header {
+  background-color: #1f1f1f; /* Cor quase preta, como no Material Design */
+  color: #e6e0e9; /* Cor do texto claro */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidade */
+  border-bottom: 6px solid #3EB87D;
+}
+
+.logo {
+  text-align: center;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px; /* Ajuste o tamanho da sua logo */
+}
+
+.navigation {
+  display: flex;
+  gap: 8px; /* Espaço entre os botões */
+}
+
+.nav-button {
+  background-color: transparent;
+  color: #e6e0e9;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover,
+.nav-button:focus {
+  background-color: #38383a; /* Fundo sutil ao passar o mouse */
+  color: #3EB87D; /* Cor de destaque ao passar o mouse */
+  outline: none;
+}
+
+.footer {
+  height: 30px;
+  background-color: #1f1f1f;
+  color: #e6e0e9;
+  
+  /* Flexbox para centralizar o texto */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  
+  margin-top: auto; /* Empurra o footer para a parte de baixo */
+}
+
+/* Opcional: Remova a margem padrão do parágrafo */
+.footer p {
+  font-size: 10px;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.social-links a {
+  color: #d0bcff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+.content-container {
+    flex: 1; /* Permite que o conteúdo principal ocupe todo o espaço disponível */
+}
+
+.map-frame {
+    border: none; /* Remove a borda padrão do iframe */
+    width: 100%; /* Faz o iframe ocupar a largura total do container */
+    height: 100%; /* Define uma altura fixa para o mapa. Você pode ajustar esse valor. */
+}
+
