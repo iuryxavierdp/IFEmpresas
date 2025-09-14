@@ -86,7 +86,9 @@ a{
   margin: 0;
   font-size: 12px;
 }
-
+.navigation {
+  gap: 0px;
+}
 /* --- Media Query para Mobile (Telas pequenas) --- */
 @media (max-width: 768px) {
   
@@ -103,7 +105,6 @@ a{
   .nav-button {
     padding: 8px 5px;
     font-size: 13px; /* Opcional: diminui o tamanho da fonte para caber melhor */
-    padding-right: 20px;
   }
 
   /* Fixa o footer na parte de baixo */
@@ -132,6 +133,7 @@ a{
     padding: 0; /* Remove qualquer padding para o mapa ocupar a tela toda */
   }
 }
+
 
 
 
