@@ -28,7 +28,7 @@ body {
   border-bottom: 6px solid #3EB87D;
 }
 
-.header a{
+a{
   text-decoration: none;
 }
 
@@ -126,4 +126,5 @@ body {
     padding: 0; /* Remove qualquer padding para o mapa ocupar a tela toda */
   }
 }
+
 
