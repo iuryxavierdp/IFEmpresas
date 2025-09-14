@@ -107,27 +107,41 @@ body {
 /* --- Media Query para Mobile --- */
 /* Aplica estes estilos apenas em telas com no máximo 768px de largura */
 @media (max-width: 768px) {
-  .header-md3 {
-    position: fixed; /* Fixa o header no topo da tela */
-    top: 0; /* Alinha ao topo */
-    left: 0;
-    width: 100%; /* Ocupa a largura total */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-    /* Adicione um padding na parte de baixo para evitar que o conteúdo fique escondido */
-    padding-bottom: 64px;
-  }
 
-  .footer-md3 {
-    position: fixed; /* Fixa o footer na parte de baixo */
-    bottom: 0; /* Alinha à parte de baixo */
+  /* Fixa o header no topo */
+  .header-md3 {
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw; /* Usa a largura total da viewport */
     z-index: 1000;
   }
 
-  /* Adicione um espaçamento para o conteúdo principal não ser coberto */
+  /* Fixa o footer na parte de baixo */
+  .footer-md3 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw; /* Usa a largura total da viewport */
+    z-index: 1000;
+  }
+
+  /* Adiciona espaçamento ao corpo para que o conteúdo não seja escondido */
   body {
-    padding-top: 64px; /* Adiciona espaço no topo para o header */
-    padding-bottom: 40px; /* Adiciona espaço no rodapé para o footer */
+    padding-top: 64px; /* Substitua pelo valor da altura do seu header */
+    padding-bottom: 40px; /* Substitua pelo valor da altura do seu footer */
+  }
+
+  /*
+  IMPORTANTE: para garantir que o mapa não interaja com o header e footer
+  Você pode envolver o mapa em um container e aplicar o `padding` nele.
+  Ou apenas manter o `padding` no `body` como está acima.
+  */
+  
+  /* Exemplo de container para o mapa, se necessário */
+  .map-container {
+      margin: 64px 0 40px; /* Margem para o header e footer */
+      height: calc(100vh - 104px); /* A altura da tela menos a altura do header e footer */
+      width: 100vw;
   }
 }
