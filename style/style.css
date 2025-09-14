@@ -107,7 +107,7 @@ body {
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     flex-direction: column;
-    padding: 7px 13px !important;
+    padding: 3px 5px !important;
   }
 
   /* Fixa o footer na parte de baixo */
@@ -139,6 +139,7 @@ body {
   }
 
 }
+
 
 
 
