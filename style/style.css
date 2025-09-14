@@ -101,11 +101,15 @@ body {
   }
 
   .nav-button {
+    min-width: 120px; /* Adjust this value as needed */
     font-size: 13px; /* Opcional: diminui o tamanho da fonte para caber melhor */
     text-align: center;
     display: flex;
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
+    flex-direction: column !important;
+    line-height: 1.2;
+    padding: 10px;
   }
 
   /* Fixa o footer na parte de baixo */
@@ -137,3 +141,4 @@ body {
   }
 
 }
+
