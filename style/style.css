@@ -86,60 +86,6 @@ body {
   margin: 0;
   font-size: 12px;
 }
-
-/* --- Media Query para Mobile (Telas pequenas) --- */
-@media (max-width: 768px) {
-  
-  /* Fixa o header no topo */
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 0 16px;
-  }
-
-  .nav-button {
-    font-size: 13px; /* Opcional: diminui o tamanho da fonte para caber melhor */
-    text-align: center;
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    flex-direction: column;
-    padding: 3px 5px !important;
-  }
-
-  /* Fixa o footer na parte de baixo */
-  .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  .footer p{
-    font-size: 8px;
-  }
-
-  .navigation {
-    gap: 0px;
-  }
-
-  /* Adiciona espaçamento ao corpo para o conteúdo não ser coberto */
-  body {
-    padding-top: 64px; /* Altura do header */
-    padding-bottom: 30px; /* Altura do footer */
-  }
-
-  /* Ajusta o espaçamento do conteúdo para que ele não fique "atrás" do header e footer */
-  .content-container {
-    padding: 0; /* Remove qualquer padding para o mapa ocupar a tela toda */
-  }
-
-}
-
 .card-container {
     font-family: Arial, sans-serif;
     background-color: #202124; /* Fundo cinza escuro, similar ao do Google */
@@ -207,3 +153,97 @@ body {
     font-size: 14px;
     cursor: pointer;
 }
+
+.folium-modal{
+  display:none; 
+  position:fixed; 
+  z-index:10000; 
+  left:0; 
+  top:0; 
+  width:100%; 
+  height:100%; 
+  overflow:auto; 
+  background-color:rgba(0,0,0,0.7); 
+  justify-content:center; 
+  align-items:center;      
+}
+
+.folium-modal-content{
+  background-color:#fff; 
+  margin:auto; 
+  padding:20px; 
+  border-radius:10px; 
+  box-shadow:0 5px 15px rgba(0,0,0,0.3); 
+  position:relative; 
+  max-width:500px;
+}
+
+.folium-modal-close{
+  color:#aaa; 
+  float:right; 
+  font-size:28px; 
+  font-weight:bold; 
+  cursor:pointer;
+}
+/* --- Media Query para Mobile (Telas pequenas) --- */
+@media (max-width: 768px) {
+
+  .folium-modal-content{
+  background-color:#fff; 
+  margin:auto; 
+  padding: 3vw; 
+  border-radius:10px; 
+  box-shadow:0 5px 15px rgba(0,0,0,0.3); 
+  position:relative; 
+  max-width: 90vw;
+  }
+  /* Fixa o header no topo */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 16px;
+  }
+
+  .nav-button {
+    font-size: 13px; /* Opcional: diminui o tamanho da fonte para caber melhor */
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    flex-direction: column;
+    padding: 3px 5px !important;
+  }
+
+  /* Fixa o footer na parte de baixo */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .footer p{
+    font-size: 8px;
+  }
+
+  .navigation {
+    gap: 0px;
+  }
+
+  /* Adiciona espaçamento ao corpo para o conteúdo não ser coberto */
+  body {
+    padding-top: 64px; /* Altura do header */
+    padding-bottom: 30px; /* Altura do footer */
+  }
+
+  /* Ajusta o espaçamento do conteúdo para que ele não fique "atrás" do header e footer */
+  .content-container {
+    padding: 0; /* Remove qualquer padding para o mapa ocupar a tela toda */
+  }
+
+}
+
