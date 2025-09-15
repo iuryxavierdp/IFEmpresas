@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_11bace79c818a45e89f06079505de27c {
+                #map_5602226ee0d1965a39e62da9cd9fc27e {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -55,33 +55,250 @@
     
     
     <div id="modal-0" class="folium-modal">
-            <span class="folium-modal-close"">&times;</span>
-            
-    <div style="text-align: center;">
-        <h2 style="margin: 0;">Energisa</h2>
-        <img src="https://www.energisa.com.br/sites/energisa/files/styles/crop_mobile/public/images/news/Diermifran-4_0.jpg.webp?itok=nb3R3MFV" alt="Energisa" style="max-width:400px; max-height:300px;">
-        <p style="font-size: 12px; margin: 0; padding-top: 5px;">
-            Lat: -21.38770859097071 | Lon: -42.69417193593248
-        </p>
-    </div>
-    
+        <div class="folium-modal-content">
+            <span class="folium-modal-close">&times;</span>
+            <div style="text-align: center;">
+    <h2 style="margin: 0;">Energisa</h2>
+    <img src="https://imgur.com/a/fv6AneW.jpg" alt="Energisa">
+    <p style="font-size: 12px; margin: 0; padding-top: 5px;">
+        Lat: -21.38770859097071 | Lon: -42.69417193593248
+    </p>
+</div>
         </div>
     </div>
     
     <div id="modal-1" class="folium-modal">
-            <span class="folium-modal-close"">&times;</span>
-            
-    <div style="text-align: center;">
-        <h2 style="margin: 0;">Arena Horto</h2>
-        <img src="https://imgur.com/a/fv6AneW.jpg" alt="Arena Horto" style="max-width:400px; max-height:300px;">
-        <p style="font-size: 12px; margin: 0; padding-top: 5px;">
-            Lat: -21.375777150711308 | Lon: -42.70998011516444
-        </p>
-    </div>
-    
+        <div class="folium-modal-content">
+            <span class="folium-modal-close">&times;</span>
+            <div style="text-align: center;">
+    <h2 style="margin: 0;">Arena Horto</h2>
+    <img src="https://imgur.com/a/fv6AneW.jpg" alt="Arena Horto">
+    <p style="font-size: 12px; margin: 0; padding-top: 5px;">
+        Lat: -21.375777150711308 | Lon: -42.70998011516444
+    </p>
+</div>
         </div>
     </div>
     
+    
+    <style>
+        html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f2fa;
+  overflow: hidden;
+}
+.header {
+  position: fixed;
+  background-color: #1f1f1f;
+  color: #e6e0e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 64px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 6px solid #3EB87D;
+}
+.header a{
+  text-decoration: none;
+}
+.logo img {
+  height: 40px;
+}
+.navigation {
+  display: flex;
+  gap: 8px;
+}
+.nav-button {
+  background-color: transparent;
+  color: #e6e0e9;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav-button:hover,
+.nav-button:focus {
+  background-color: #38383a;
+  color: #3EB87D;
+  outline: none;
+}
+.content-container {
+
+  flex: 1;
+}
+.map-frame {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+.footer {
+  background-color: #1f1f1f;
+  color: #e6e0e9;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+.footer p {
+  margin: 0;
+  font-size: 12px;
+}
+.card-container {
+    font-family: Arial, sans-serif;
+    background-color: #202124;
+    color: #e8eaed;
+    border-radius: 12px;
+    padding: 16px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.card-header {
+    margin-bottom: 12px;
+}
+.card-title {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 500;
+}
+.rating {
+    font-size: 14px;
+    color: #fbbc04;
+}
+.card-description {
+    font-size: 14px;
+    color: #bdc1c6;
+    margin: 4px 0 0;
+}
+.card-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.card-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.card-info p {
+    font-size: 14px;
+    margin: 8px 0;
+}
+.card-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 16px;
+}
+.action-button {
+    background-color: #303134;
+    color: #8ab4f8;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.folium-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.folium-modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 3vw;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  max-width: 90vw;
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.folium-modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 16px;
+  }
+  .nav-button {
+    font-size: 13px; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    padding: 3px 5px !important;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .footer p{
+    font-size: 8px;
+  }
+  .navigation {
+    gap: 0px;
+  }
+  body {
+    padding-top: 64px;
+    padding-bottom: 30px;
+  }
+  .content-container {
+    padding: 0;
+  }
+  .folium-modal-content {
+    max-width: 95vw;
+    padding: 2vw;
+  }
+}
+    </style>
     
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -116,14 +333,14 @@
     });
 </script>
     
-            <div class="folium-map" id="map_11bace79c818a45e89f06079505de27c" ></div>
+            <div class="folium-map" id="map_5602226ee0d1965a39e62da9cd9fc27e" ></div>
         
 </body>
 <script>
     
     
-            var map_11bace79c818a45e89f06079505de27c = L.map(
-                "map_11bace79c818a45e89f06079505de27c",
+            var map_5602226ee0d1965a39e62da9cd9fc27e = L.map(
+                "map_5602226ee0d1965a39e62da9cd9fc27e",
                 {
                     center: [-21.387807, -42.69678],
                     crs: L.CRS.EPSG3857,
@@ -140,7 +357,7 @@
 
         
     
-            var tile_layer_d5c55cf4e360f3e373caf4e6476dd0e7 = L.tileLayer(
+            var tile_layer_216c9cfb1d8e049e97af72979e960354 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -157,17 +374,17 @@
             );
         
     
-            tile_layer_d5c55cf4e360f3e373caf4e6476dd0e7.addTo(map_11bace79c818a45e89f06079505de27c);
+            tile_layer_216c9cfb1d8e049e97af72979e960354.addTo(map_5602226ee0d1965a39e62da9cd9fc27e);
         
     
-            var marker_8a24d5c7ef012fbccad12149944eb3fc = L.marker(
+            var marker_b62938a6ea707b1776bed4397e516ffe = L.marker(
                 [-21.38770859097071, -42.69417193593248],
                 {
 }
-            ).addTo(map_11bace79c818a45e89f06079505de27c);
+            ).addTo(map_5602226ee0d1965a39e62da9cd9fc27e);
         
     
-            var div_icon_d36cfa752247624c2312cdac6d534e50 = L.divIcon({
+            var div_icon_8b685f4fbfae5ff1d44215cfd0f31d8b = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-0\" class=\"custom-marker\" style=\"cursor: pointer;\"\u003e\n        \u003cspan class=\"glyphicon glyphicon-map-marker\" style=\"color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);\"\u003e\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -177,17 +394,17 @@
 });
         
     
-                marker_8a24d5c7ef012fbccad12149944eb3fc.setIcon(div_icon_d36cfa752247624c2312cdac6d534e50);
+                marker_b62938a6ea707b1776bed4397e516ffe.setIcon(div_icon_8b685f4fbfae5ff1d44215cfd0f31d8b);
             
     
-            var marker_eb4f532e2fa8a2024d3901be55647727 = L.marker(
+            var marker_9c09fdc0953e7f23a56590a40f1092b1 = L.marker(
                 [-21.375777150711308, -42.70998011516444],
                 {
 }
-            ).addTo(map_11bace79c818a45e89f06079505de27c);
+            ).addTo(map_5602226ee0d1965a39e62da9cd9fc27e);
         
     
-            var div_icon_13490ed7cc228c493a79c9c3fe629710 = L.divIcon({
+            var div_icon_98a7da3f661c45151c62e99c9276ef33 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-1\" class=\"custom-marker\" style=\"cursor: pointer;\"\u003e\n        \u003cspan class=\"glyphicon glyphicon-map-marker\" style=\"color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);\"\u003e\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -197,7 +414,7 @@
 });
         
     
-                marker_eb4f532e2fa8a2024d3901be55647727.setIcon(div_icon_13490ed7cc228c493a79c9c3fe629710);
+                marker_9c09fdc0953e7f23a56590a40f1092b1.setIcon(div_icon_98a7da3f661c45151c62e99c9276ef33);
             
 </script>
 </html>

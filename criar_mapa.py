@@ -4,6 +4,9 @@ from branca.element import IFrame
 
 df_empresas = pd.read_csv('empresas.txt')
 
+with open('style/style.css', 'r', encoding='utf-8') as f:
+    css_content = f.read()
+
 tiles = 'CartoDB.Positron'
 attr = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
@@ -15,30 +18,33 @@ mapa = fl.Map(
     attr= attr
     )
 
+# No início do seu script, antes do loop
+with open('modal_template.html', 'r', encoding='utf-8') as f:
+    template_html = f.read()
+
 modal_html = ""
+# Dentro do seu loop `for`
 for index, row in df_empresas.iterrows():
-    # 1. Crie o conteúdo do modal
-    content_html = f"""
-    <div style="text-align: center;">
-        <h2 style="margin: 0;">{row['Nome']}</h2>
-        <img src="{row['Img']}" alt="{row['Nome']}" style="max-width:400px; max-height:300px;">
-        <p style="font-size: 12px; margin: 0; padding-top: 5px;">
-            Lat: {row['Latitude']} | Lon: {row['Longitude']}
-        </p>
-    </div>
-    """
+    # 1. Substitui o content_html pelo template HTML
+    content_html = template_html.format(
+        nome=row['Nome'],
+        latitude=row['Latitude'],
+        longitude=row['Longitude'],
+        img=row['Img']
+    )
 
     # 2. Crie a estrutura do modal
     modal_id = f"modal-{index}"
+
     modal_html += f"""
     <div id="{modal_id}" class="folium-modal">
-            <span class="folium-modal-close"">&times;</span>
+        <div class="folium-modal-content">
+            <span class="folium-modal-close">&times;</span>
             {content_html}
         </div>
     </div>
     """
 
-    # 3. Crie o ícone do marcador com um ID de dados
     icon_html = f"""
     <div data-modal-id="{modal_id}" class="custom-marker" style="cursor: pointer;">
         <span class="glyphicon glyphicon-map-marker" style="color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);"></span>
@@ -53,6 +59,12 @@ for index, row in df_empresas.iterrows():
             icon_anchor=[0, 0]
         )
     ).add_to(mapa)
+
+css_script = f"""
+    <style>
+        {css_content}
+    </style>
+"""
 
 # 4. Adicione o JavaScript para controlar os modais e os cliques nos marcadores
 js_script = """
@@ -92,6 +104,7 @@ js_script = """
 
 # Adicione o HTML dos modais e o JavaScript ao mapa
 mapa.get_root().html.add_child(fl.Element(modal_html))
+mapa.get_root().html.add_child(fl.Element(css_script))
 mapa.get_root().html.add_child(fl.Element(js_script))
 
 mapa.save("mapa.html")
