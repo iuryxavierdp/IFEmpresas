@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_7119688ad08eb77057482cfb2976947f {
+                #map_a5753997a1d2bd4633a9ac9cedd3b272 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,14 +54,78 @@
 <body>
     
     
-            <div class="folium-map" id="map_7119688ad08eb77057482cfb2976947f" ></div>
+    <div id="modal-0" class="folium-modal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+        <div class="folium-modal-content" style="background-color:#fff; margin:auto; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.3); position:relative; max-width:500px;">
+            <span class="folium-modal-close" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+            
+    <div style="text-align: center;">
+        <h2 style="margin: 0;">Energisa</h2>
+        <img src="https://www.energisa.com.br/sites/energisa/files/styles/crop_mobile/public/images/news/Diermifran-4_0.jpg.webp?itok=nb3R3MFV" alt="Energisa" style="max-width:400px; max-height:300px;">
+        <p style="font-size: 12px; margin: 0; padding-top: 5px;">
+            Lat: -21.38770859097071 | Lon: -42.69417193593248
+        </p>
+    </div>
+    
+        </div>
+    </div>
+    
+    <div id="modal-1" class="folium-modal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+        <div class="folium-modal-content" style="background-color:#fff; margin:auto; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.3); position:relative; max-width:500px;">
+            <span class="folium-modal-close" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+            
+    <div style="text-align: center;">
+        <h2 style="margin: 0;">Arena Horto</h2>
+        <img src="https://www.energisa.com.br/sites/energisa/files/styles/crop_mobile/public/images/news/Diermifran-4_0.jpg.webp?itok=nb3R3MFV" alt="Arena Horto" style="max-width:400px; max-height:300px;">
+        <p style="font-size: 12px; margin: 0; padding-top: 5px;">
+            Lat: -21.375777150711308 | Lon: -42.70998011516444
+        </p>
+    </div>
+    
+        </div>
+    </div>
+    
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var modals = document.getElementsByClassName('folium-modal');
+        var spans = document.getElementsByClassName('folium-modal-close');
+        
+        // Fechar o modal ao clicar no 'x'
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].onclick = function() {
+                var modal = this.closest('.folium-modal');
+                modal.style.display = 'none';
+            }
+        }
+        
+        // Fechar o modal ao clicar fora dele
+        window.onclick = function(event) {
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = 'none';
+                }
+            }
+        }
+
+        // Ligar o evento de clique nos marcadores para abrir o modal
+        var customMarkers = document.getElementsByClassName('custom-marker');
+        for (var i = 0; i < customMarkers.length; i++) {
+            customMarkers[i].addEventListener('click', function() {
+                var modalId = this.getAttribute('data-modal-id');
+                document.getElementById(modalId).style.display = 'flex';
+            });
+        }
+    });
+</script>
+    
+            <div class="folium-map" id="map_a5753997a1d2bd4633a9ac9cedd3b272" ></div>
         
 </body>
 <script>
     
     
-            var map_7119688ad08eb77057482cfb2976947f = L.map(
-                "map_7119688ad08eb77057482cfb2976947f",
+            var map_a5753997a1d2bd4633a9ac9cedd3b272 = L.map(
+                "map_a5753997a1d2bd4633a9ac9cedd3b272",
                 {
                     center: [-21.387807, -42.69678],
                     crs: L.CRS.EPSG3857,
@@ -78,7 +142,7 @@
 
         
     
-            var tile_layer_ae667ff15d037966ffa86c699e3c011f = L.tileLayer(
+            var tile_layer_a0cb6ac3a841012499e33e3717488350 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -95,83 +159,47 @@
             );
         
     
-            tile_layer_ae667ff15d037966ffa86c699e3c011f.addTo(map_7119688ad08eb77057482cfb2976947f);
+            tile_layer_a0cb6ac3a841012499e33e3717488350.addTo(map_a5753997a1d2bd4633a9ac9cedd3b272);
         
     
-            var marker_bff691d628aae0e2a428f255715097b8 = L.marker(
+            var marker_e301396dc1c9d1cdc9cfad2665b65a87 = L.marker(
                 [-21.38770859097071, -42.69417193593248],
                 {
 }
-            ).addTo(map_7119688ad08eb77057482cfb2976947f);
+            ).addTo(map_a5753997a1d2bd4633a9ac9cedd3b272);
         
     
-            var icon_1120d4da9220e252c79d2729b1958562 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "green",
-  "iconColor": "white",
-  "icon": "building",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_e0c35c4bdc7868a4ce2cb4e8e9e4757a = L.popup({
-  "maxWidth": "100%",
+            var div_icon_7e2ee2e70c368dfcb3ec3df1025ac596 = L.divIcon({
+  "html": "\n    \u003cdiv data-modal-id=\"modal-0\" class=\"custom-marker\" style=\"cursor: pointer;\"\u003e\n        \u003cspan class=\"glyphicon glyphicon-map-marker\" style=\"color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);\"\u003e\u003c/span\u003e\n    \u003c/div\u003e\n    ",
+  "iconAnchor": [
+0,
+0,
+],
+  "className": "empty",
 });
-
-        
-            
-                var html_9b38988686691a249b78dd97f1e4bc33 = $(`<div id="html_9b38988686691a249b78dd97f1e4bc33" style="width: 100.0%; height: 100.0%;">     <div style="text-align: center;">             <h1 style="margin: 0;">Energisa</h1>             <img src="https://www.energisa.com.br/sites/energisa/files/styles/crop_mobile/public/images/news/Diermifran-4_0.jpg.webp?itok=nb3R3MFV" alt="Energisa" style="width:426px;height:240px;">             <p style="font-size: 10px; margin: 0; padding-top: 5px;">                 Lat: -21.38770859097071 | Lon: -42.69417193593248             </p>         </div>     </p>     </div>`)[0];
-                popup_e0c35c4bdc7868a4ce2cb4e8e9e4757a.setContent(html_9b38988686691a249b78dd97f1e4bc33);
-            
-        
-
-        marker_bff691d628aae0e2a428f255715097b8.bindPopup(popup_e0c35c4bdc7868a4ce2cb4e8e9e4757a)
-        ;
-
         
     
-    
-                marker_bff691d628aae0e2a428f255715097b8.setIcon(icon_1120d4da9220e252c79d2729b1958562);
+                marker_e301396dc1c9d1cdc9cfad2665b65a87.setIcon(div_icon_7e2ee2e70c368dfcb3ec3df1025ac596);
             
     
-            var marker_9e0af3fffc3c13a08f7b8f73ce4a7351 = L.marker(
+            var marker_98c40357a55f5bb75eac29fa51f1a49b = L.marker(
                 [-21.375777150711308, -42.70998011516444],
                 {
 }
-            ).addTo(map_7119688ad08eb77057482cfb2976947f);
+            ).addTo(map_a5753997a1d2bd4633a9ac9cedd3b272);
         
     
-            var icon_7f4d3797dd71d9e1dbfcedc82847c677 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "green",
-  "iconColor": "white",
-  "icon": "building",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_c86abadf713e4bead239670b9e419268 = L.popup({
-  "maxWidth": "100%",
+            var div_icon_c3b17ea6b92c17a1b67751c3cb3a131e = L.divIcon({
+  "html": "\n    \u003cdiv data-modal-id=\"modal-1\" class=\"custom-marker\" style=\"cursor: pointer;\"\u003e\n        \u003cspan class=\"glyphicon glyphicon-map-marker\" style=\"color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);\"\u003e\u003c/span\u003e\n    \u003c/div\u003e\n    ",
+  "iconAnchor": [
+0,
+0,
+],
+  "className": "empty",
 });
-
-        
-            
-                var html_35c6eb25bd2b383b6674209dd68e497f = $(`<div id="html_35c6eb25bd2b383b6674209dd68e497f" style="width: 100.0%; height: 100.0%;">     <div style="text-align: center;">             <h1 style="margin: 0;">Arena Horto</h1>             <img src="https://www.energisa.com.br/sites/energisa/files/styles/crop_mobile/public/images/news/Diermifran-4_0.jpg.webp?itok=nb3R3MFV" alt="Arena Horto" style="width:426px;height:240px;">             <p style="font-size: 10px; margin: 0; padding-top: 5px;">                 Lat: -21.375777150711308 | Lon: -42.70998011516444             </p>         </div>     </p>     </div>`)[0];
-                popup_c86abadf713e4bead239670b9e419268.setContent(html_35c6eb25bd2b383b6674209dd68e497f);
-            
-        
-
-        marker_9e0af3fffc3c13a08f7b8f73ce4a7351.bindPopup(popup_c86abadf713e4bead239670b9e419268)
-        ;
-
         
     
-    
-                marker_9e0af3fffc3c13a08f7b8f73ce4a7351.setIcon(icon_7f4d3797dd71d9e1dbfcedc82847c677);
+                marker_98c40357a55f5bb75eac29fa51f1a49b.setIcon(div_icon_c3b17ea6b92c17a1b67751c3cb3a131e);
             
 </script>
 </html>
