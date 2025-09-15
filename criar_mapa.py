@@ -31,9 +31,8 @@ for index, row in df_empresas.iterrows():
     # 2. Crie a estrutura do modal
     modal_id = f"modal-{index}"
     modal_html += f"""
-    <div id="{modal_id}" class="folium-modal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
-        <div class="folium-modal-content" style="background-color:#fff; margin:auto; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.3); position:relative; max-width:500px;">
-            <span class="folium-modal-close" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+    <div id="{modal_id}" class="folium-modal">
+            <span class="folium-modal-close"">&times;</span>
             {content_html}
         </div>
     </div>
