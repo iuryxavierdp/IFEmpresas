@@ -1,22 +1,19 @@
-/* --- Estilos Gerais (para todas as telas) --- */
 html, body {
   height: 100%;
   margin: 0;
-  font-family: 'Roboto', sans-serif; /* Fonte comum do Material Design */
+  font-family: 'Roboto', sans-serif;
 }
-
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que o corpo tenha pelo menos a altura total da janela do navegador */
+  min-height: 100vh;
   margin: 0;
-  font-family: 'Roboto', sans-serif; /* Use uma fonte semelhante ao Material Design */
-  background-color: #f7f2fa; /* Cor de fundo para melhor visualização */
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f2fa;
   overflow: hidden;
 }
-
-/* --- Estilos do Header --- */
 .header {
+  position: fixed;
   background-color: #1f1f1f;
   color: #e6e0e9;
   display: flex;
@@ -24,23 +21,20 @@ body {
   align-items: center;
   padding: 0 24px;
   height: 64px;
+  width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-bottom: 6px solid #3EB87D;
 }
-
 .header a{
   text-decoration: none;
 }
-
 .logo img {
   height: 40px;
 }
-
 .navigation {
   display: flex;
   gap: 8px;
 }
-
 .nav-button {
   background-color: transparent;
   color: #e6e0e9;
@@ -52,26 +46,21 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .nav-button:hover,
 .nav-button:focus {
   background-color: #38383a;
   color: #3EB87D;
   outline: none;
 }
-
-/* --- Estilos do Mapa (seu código) --- */
 .content-container {
-  flex: 1; /* Permite que o conteúdo principal ocupe todo o espaço disponível */
-}
 
+  flex: 1;
+}
 .map-frame {
   border: none;
   width: 100%;
   height: 100%;
 }
-
-/* --- Estilos do Footer --- */
 .footer {
   background-color: #1f1f1f;
   color: #e6e0e9;
@@ -81,79 +70,68 @@ body {
   align-items: center;
   margin-top: auto;
 }
-
 .footer p {
   margin: 0;
   font-size: 12px;
 }
 .card-container {
     font-family: Arial, sans-serif;
-    background-color: #202124; /* Fundo cinza escuro, similar ao do Google */
-    color: #e8eaed; /* Cor do texto claro */
+    background-color: #202124;
+    color: #e8eaed;
     border-radius: 12px;
     padding: 16px;
     max-width: 500px;
     margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .card-header {
     margin-bottom: 12px;
 }
-
 .card-title {
     font-size: 24px;
     margin: 0;
     font-weight: 500;
 }
-
 .rating {
     font-size: 14px;
-    color: #fbbc04; /* Cor amarela para as estrelas */
+    color: #fbbc04;
 }
-
 .card-description {
     font-size: 14px;
     color: #bdc1c6;
     margin: 4px 0 0;
 }
-
 .card-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
     margin-bottom: 16px;
 }
-
 .card-images img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
 }
-
 .card-info p {
     font-size: 14px;
     margin: 8px 0;
 }
-
 .card-actions {
     display: flex;
     justify-content: flex-start;
     gap: 8px;
     margin-top: 16px;
 }
-
 .action-button {
-    background-color: #303134; /* Fundo cinza do botão */
-    color: #8ab4f8; /* Cor azul do texto do botão */
+    background-color: #303134;
+    color: #8ab4f8;
     border: none;
     border-radius: 20px;
     padding: 10px 16px;
     font-size: 14px;
     cursor: pointer;
 }
-
 .folium-modal{
   display:none; 
   position:fixed; 
@@ -167,7 +145,6 @@ body {
   justify-content:center; 
   align-items:center;      
 }
-
 .folium-modal-content{
   background-color:#fff; 
   margin:auto; 
@@ -177,7 +154,6 @@ body {
   position:relative; 
   max-width:500px;
 }
-
 .folium-modal-close{
   color:#aaa; 
   float:right; 
@@ -185,19 +161,8 @@ body {
   font-weight:bold; 
   cursor:pointer;
 }
-/* --- Media Query para Mobile (Telas pequenas) --- */
-@media (max-width: 768px) {
 
-  .folium-modal-content{
-  background-color:#fff; 
-  margin:auto; 
-  padding: 3vw; 
-  border-radius:10px; 
-  box-shadow:0 5px 15px rgba(0,0,0,0.3); 
-  position:relative; 
-  max-width: 90vw;
-  }
-  /* Fixa o header no topo */
+@media (max-width: 768px) {
   .header {
     position: fixed;
     top: 0;
@@ -206,18 +171,15 @@ body {
     z-index: 1000;
     padding: 0 16px;
   }
-
   .nav-button {
-    font-size: 13px; /* Opcional: diminui o tamanho da fonte para caber melhor */
+    font-size: 13px; 
     text-align: center;
     display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
+    justify-content: center;
+    align-items: center; 
     flex-direction: column;
     padding: 3px 5px !important;
   }
-
-  /* Fixa o footer na parte de baixo */
   .footer {
     position: fixed;
     bottom: 0;
@@ -225,25 +187,17 @@ body {
     width: 100%;
     z-index: 1000;
   }
-
   .footer p{
     font-size: 8px;
   }
-
   .navigation {
     gap: 0px;
   }
-
-  /* Adiciona espaçamento ao corpo para o conteúdo não ser coberto */
   body {
-    padding-top: 64px; /* Altura do header */
-    padding-bottom: 30px; /* Altura do footer */
+    padding-top: 64px;
+    padding-bottom: 30px;
   }
-
-  /* Ajusta o espaçamento do conteúdo para que ele não fique "atrás" do header e footer */
   .content-container {
-    padding: 0; /* Remove qualquer padding para o mapa ocupar a tela toda */
+    padding: 0;
   }
-
 }
-

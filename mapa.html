@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style/style.css">
+    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_526e49fc61b7fc0e5e06217efeac7335 {
+                #map_f5127aac96e857d6145655388597e313 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,9 +54,9 @@
 <body>
     
     
-    <div id="modal-0" class="folium-modal">
-        <div class="folium-modal-content">
-            <span class="folium-modal-close">&times;</span>
+    <div id="modal-0" class="folium-modal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+        <div class="folium-modal-content" style="background-color:#fff; margin:auto; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.3); position:relative; max-width:500px;">
+            <span class="folium-modal-close" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
             
     <div style="text-align: center;">
         <h2 style="margin: 0;">Energisa</h2>
@@ -69,13 +69,13 @@
         </div>
     </div>
     
-    <div id="modal-1" class="folium-modal">
-        <div class="folium-modal-content">
-            <span class="folium-modal-close">&times;</span>
+    <div id="modal-1" class="folium-modal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+        <div class="folium-modal-content" style="background-color:#fff; margin:auto; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.3); position:relative; max-width:500px;">
+            <span class="folium-modal-close" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
             
     <div style="text-align: center;">
         <h2 style="margin: 0;">Arena Horto</h2>
-        <img src="https://www.energisa.com.br/sites/energisa/files/styles/crop_mobile/public/images/news/Diermifran-4_0.jpg.webp?itok=nb3R3MFV" alt="Arena Horto" style="max-width:400px; max-height:300px;">
+        <img src="https://imgur.com/a/fv6AneW.jpg" alt="Arena Horto" style="max-width:400px; max-height:300px;">
         <p style="font-size: 12px; margin: 0; padding-top: 5px;">
             Lat: -21.375777150711308 | Lon: -42.70998011516444
         </p>
@@ -118,20 +118,20 @@
     });
 </script>
     
-            <div class="folium-map" id="map_526e49fc61b7fc0e5e06217efeac7335" ></div>
+            <div class="folium-map" id="map_f5127aac96e857d6145655388597e313" ></div>
         
 </body>
 <script>
     
     
-            var map_526e49fc61b7fc0e5e06217efeac7335 = L.map(
-                "map_526e49fc61b7fc0e5e06217efeac7335",
+            var map_f5127aac96e857d6145655388597e313 = L.map(
+                "map_f5127aac96e857d6145655388597e313",
                 {
                     center: [-21.387807, -42.69678],
                     crs: L.CRS.EPSG3857,
                     ...{
   "zoom": 15,
-  "zoomControl": true,
+  "zoomControl": false,
   "preferCanvas": false,
 }
 
@@ -142,7 +142,7 @@
 
         
     
-            var tile_layer_ae3f2836589a8230fb73218786cc51ee = L.tileLayer(
+            var tile_layer_e188d62fdfd984428d4859c1cc0d74c5 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -159,17 +159,17 @@
             );
         
     
-            tile_layer_ae3f2836589a8230fb73218786cc51ee.addTo(map_526e49fc61b7fc0e5e06217efeac7335);
+            tile_layer_e188d62fdfd984428d4859c1cc0d74c5.addTo(map_f5127aac96e857d6145655388597e313);
         
     
-            var marker_71ea46479e20c9a4dd89b9b8c830359d = L.marker(
+            var marker_d4e7e225c5fa525e8ed21227c239ada2 = L.marker(
                 [-21.38770859097071, -42.69417193593248],
                 {
 }
-            ).addTo(map_526e49fc61b7fc0e5e06217efeac7335);
+            ).addTo(map_f5127aac96e857d6145655388597e313);
         
     
-            var div_icon_a6a81653be92a5889d6fa1e56b96c3f2 = L.divIcon({
+            var div_icon_4cfe005b57390dc276828d094b7ef422 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-0\" class=\"custom-marker\" style=\"cursor: pointer;\"\u003e\n        \u003cspan class=\"glyphicon glyphicon-map-marker\" style=\"color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);\"\u003e\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -179,17 +179,17 @@
 });
         
     
-                marker_71ea46479e20c9a4dd89b9b8c830359d.setIcon(div_icon_a6a81653be92a5889d6fa1e56b96c3f2);
+                marker_d4e7e225c5fa525e8ed21227c239ada2.setIcon(div_icon_4cfe005b57390dc276828d094b7ef422);
             
     
-            var marker_db4094b6f25fc04ea5f7e12160970f13 = L.marker(
+            var marker_fec2213d3e50c4d271d74797001defb3 = L.marker(
                 [-21.375777150711308, -42.70998011516444],
                 {
 }
-            ).addTo(map_526e49fc61b7fc0e5e06217efeac7335);
+            ).addTo(map_f5127aac96e857d6145655388597e313);
         
     
-            var div_icon_83d0cb763c1a39e53fcd12e01b7a0a9e = L.divIcon({
+            var div_icon_8d7e099c20a6fb4f148013b2e8790042 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-1\" class=\"custom-marker\" style=\"cursor: pointer;\"\u003e\n        \u003cspan class=\"glyphicon glyphicon-map-marker\" style=\"color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);\"\u003e\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -199,7 +199,7 @@
 });
         
     
-                marker_db4094b6f25fc04ea5f7e12160970f13.setIcon(div_icon_83d0cb763c1a39e53fcd12e01b7a0a9e);
+                marker_fec2213d3e50c4d271d74797001defb3.setIcon(div_icon_8d7e099c20a6fb4f148013b2e8790042);
             
 </script>
 </html>

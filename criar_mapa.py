@@ -10,6 +10,7 @@ attr = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href=
 mapa = fl.Map(
     location=[-21.387807, -42.696780], 
     zoom_start=15,
+    zoom_control=False,
     tiles= tiles,
     attr= attr
     )
