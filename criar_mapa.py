@@ -21,6 +21,34 @@ mapa = fl.Map(
 with open('modal_template.html', 'r', encoding='utf-8') as f:
     template_html = f.read()
 
+# modal_html = ""
+# for index, row in df_empresas.iterrows():
+#     content_html = template_html.format(
+#         nome=row['Nome'],
+#         endereco=row['Endereco'],
+#         latitude=row['Latitude'],
+#         longitude=row['Longitude'],
+#         img=row['Img']
+#     )
+
+#     modal_id = f"modal-{index}"
+    
+#     modal_html += content_html.replace('custom-modal-overlay', f'custom-modal-overlay {modal_id}')
+
+#     icon_html = f"""
+#     <div data-modal-id="{modal_id}" class="custom-marker" style="cursor: pointer;">
+#         <i class="fa-solid fa-building-user" style=" font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);"></i>
+#     </div>
+#     """
+    
+#     fl.Marker(
+#         location=[row['Latitude'], row['Longitude']],
+#         icon = fl.DivIcon(
+#             html=icon_html,
+#             icon_anchor=[0, 0]
+#         )
+#     ).add_to(mapa)
+
 modal_html = ""
 for index, row in df_empresas.iterrows():
     content_html = template_html.format(
@@ -32,18 +60,46 @@ for index, row in df_empresas.iterrows():
     )
 
     modal_id = f"modal-{index}"
-    
     modal_html += content_html.replace('custom-modal-overlay', f'custom-modal-overlay {modal_id}')
 
-    # icon_html = f"""
-    # <div data-modal-id="{modal_id}" class="custom-marker" style="cursor: pointer;">
-    #     <span class="glyphicon glyphicon-map-marker" style="color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);"></span>
-    # </div>
-    # """
-
+    # --- NOVO ÍCONE E NOME DA EMPRESA ---
     icon_html = f"""
-    <div data-modal-id="{modal_id}" class="custom-marker" style="cursor: pointer;">
-        <i class="fa-solid fa-building-user" style=" font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);"></i>
+    <div data-modal-id="{modal_id}" class="custom-marker" 
+        style="
+            cursor: pointer; 
+            /* Configura o div para centralizar o conteúdo (ícone + nome) */
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            /* Centraliza horizontalmente e move para cima (-100%) para que o pino fique no ponto */
+            transform: translate(-50%, -100%);
+            width: max-content; 
+        ">
+        
+        <i class="fa-solid fa-building-user" 
+            style=" 
+                font-size: 24px; 
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+                /* ADICIONADO: Espaço de separação do nome */
+                margin-bottom: 6.5px;
+                /* REMOVIDO: transform: translate(-50%, -50%); que estava causando a sobreposição */
+            ">
+        </i>
+        
+        <span 
+            style="
+                font-size: 10px; 
+                color: #1f1f1f; 
+                background: #fff; 
+                padding: 1px 4px; 
+                border-radius: 3px; 
+                margin-top: -5px; /* Mantido para aproximar o nome do local do mapa */
+                box-shadow: 0 1px 3px rgba(0,0,0,0.3); 
+                font-weight: bold; 
+                white-space: nowrap;
+            ">
+            {row['Nome']}
+        </span>
     </div>
     """
     
