@@ -25,6 +25,7 @@ modal_html = ""
 for index, row in df_empresas.iterrows():
     content_html = template_html.format(
         nome=row['Nome'],
+        endereco=row['Endereco'],
         latitude=row['Latitude'],
         longitude=row['Longitude'],
         img=row['Img']
