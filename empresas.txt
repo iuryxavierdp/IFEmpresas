@@ -1,3 +1,3 @@
 Nome,Latitude,Longitude,Img
-Energisa,-21.38770859097071,-42.694171935932474,https://imgur.com/a/fv6AneW.jpg
-Arena Horto,-21.375777150711308,-42.70998011516444,https://imgur.com/a/fv6AneW.jpg
+Energisa,-21.38770859097071,-42.694171935932474,https://leopoldinense.com.br/images/noticias/24882/05092448_P4280011.JPG
+Arena Horto,-21.375777150711308,-42.70998011516444,https://i.imgur.com/TteVbQq.jpeg

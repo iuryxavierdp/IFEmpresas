@@ -16,16 +16,13 @@ mapa = fl.Map(
     zoom_control=False,
     tiles= tiles,
     attr= attr
-    )
+)
 
-# No início do seu script, antes do loop
 with open('modal_template.html', 'r', encoding='utf-8') as f:
     template_html = f.read()
 
 modal_html = ""
-# Dentro do seu loop `for`
 for index, row in df_empresas.iterrows():
-    # 1. Substitui o content_html pelo template HTML
     content_html = template_html.format(
         nome=row['Nome'],
         latitude=row['Latitude'],
@@ -33,17 +30,9 @@ for index, row in df_empresas.iterrows():
         img=row['Img']
     )
 
-    # 2. Crie a estrutura do modal
     modal_id = f"modal-{index}"
-
-    modal_html += f"""
-    <div id="{modal_id}" class="folium-modal">
-        <div class="folium-modal-content">
-            <span class="folium-modal-close">&times;</span>
-            {content_html}
-        </div>
-    </div>
-    """
+    
+    modal_html += content_html.replace('custom-modal-overlay', f'custom-modal-overlay {modal_id}')
 
     icon_html = f"""
     <div data-modal-id="{modal_id}" class="custom-marker" style="cursor: pointer;">
@@ -55,7 +44,6 @@ for index, row in df_empresas.iterrows():
         location=[row['Latitude'], row['Longitude']],
         icon = fl.DivIcon(
             html=icon_html,
-            
             icon_anchor=[0, 0]
         )
     ).add_to(mapa)
@@ -66,45 +54,46 @@ css_script = f"""
     </style>
 """
 
-# 4. Adicione o JavaScript para controlar os modais e os cliques nos marcadores
 js_script = """
 <script>
+    function closeModal(button) {
+        var modal = button.closest('.custom-modal-overlay');
+        modal.style.display = 'none';
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
-        var modals = document.getElementsByClassName('folium-modal');
-        var spans = document.getElementsByClassName('folium-modal-close');
-        
-        // Fechar o modal ao clicar no 'x'
-        for (var i = 0; i < spans.length; i++) {
-            spans[i].onclick = function() {
-                var modal = this.closest('.folium-modal');
-                modal.style.display = 'none';
-            }
-        }
-        
-        // Fechar o modal ao clicar fora dele
-        window.onclick = function(event) {
-            for (var i = 0; i < modals.length; i++) {
-                if (event.target == modals[i]) {
-                    modals[i].style.display = 'none';
-                }
-            }
+        // Oculta todos os modais ao carregar a página
+        var modalOverlays = document.getElementsByClassName('custom-modal-overlay');
+        for (var i = 0; i < modalOverlays.length; i++) {
+            modalOverlays[i].style.display = 'none';
         }
 
-        // Ligar o evento de clique nos marcadores para abrir o modal
         var customMarkers = document.getElementsByClassName('custom-marker');
         for (var i = 0; i < customMarkers.length; i++) {
             customMarkers[i].addEventListener('click', function() {
                 var modalId = this.getAttribute('data-modal-id');
-                document.getElementById(modalId).style.display = 'flex';
+                var modal = document.querySelector('.' + modalId);
+                if (modal) {
+                    modal.style.display = 'flex';
+                }
+            });
+        }
+        
+        for (var i = 0; i < modalOverlays.length; i++) {
+            modalOverlays[i].addEventListener('click', function(event) {
+                if (event.target === this) {
+                    this.style.display = 'none';
+                }
             });
         }
     });
 </script>
 """
 
-# Adicione o HTML dos modais e o JavaScript ao mapa
 mapa.get_root().html.add_child(fl.Element(modal_html))
 mapa.get_root().html.add_child(fl.Element(css_script))
 mapa.get_root().html.add_child(fl.Element(js_script))
 
 mapa.save("mapa.html")
+
+print("Mapa salvo como 'mapa.html'")
