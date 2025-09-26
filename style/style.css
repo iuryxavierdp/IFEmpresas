@@ -184,7 +184,7 @@ body {
     gap: 0px;
   }
   body {
-    padding-top: 64px;
+    /* padding-top: 64px; */
     padding-bottom: 30px;
   }
   .content-container {
