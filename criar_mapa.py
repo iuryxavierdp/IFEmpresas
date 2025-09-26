@@ -12,7 +12,7 @@ attr = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href=
 
 mapa = fl.Map(
     location=[-21.387807, -42.696780], 
-    zoom_start=15,
+    zoom_start=16,
     zoom_control=False,
     tiles= tiles,
     attr= attr
@@ -35,9 +35,15 @@ for index, row in df_empresas.iterrows():
     
     modal_html += content_html.replace('custom-modal-overlay', f'custom-modal-overlay {modal_id}')
 
+    # icon_html = f"""
+    # <div data-modal-id="{modal_id}" class="custom-marker" style="cursor: pointer;">
+    #     <span class="glyphicon glyphicon-map-marker" style="color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);"></span>
+    # </div>
+    # """
+
     icon_html = f"""
     <div data-modal-id="{modal_id}" class="custom-marker" style="cursor: pointer;">
-        <span class="glyphicon glyphicon-map-marker" style="color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);"></span>
+        <i class="fa-solid fa-building-user fa-beat" style=" font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);"></i>
     </div>
     """
     
