@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_26a4a7a4cbbc1972cffca0a0132b0455 {
+                #map_b78f55569eeef74a61689664fa4a1faf {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -55,26 +55,42 @@
     
     <div class="custom-modal-overlay modal-0">
     <div class="custom-modal">
-        <button class="custom-modal-close" onclick="closeModal(this)">&times;</button>
+        <div class="custom-modal-header">
+            <div class="custom-modal-title-group">   
+                <i class="fa-solid fa-city" style="color: #ffffff;"></i>
+                <p class="custom-modal-title" style="color: white;">Energisa</p>
+            </div>
+            <button class="custom-modal-close" onclick="closeModal(this)">&times;</button>
+        </div>
+        
         <img class="custom-modal-img" src="https://leopoldinense.com.br/images/noticias/24882/05092448_P4280011.JPG" alt="Energisa">
+        
         <div class="custom-modal-content">
-            <h2 class="custom-modal-title">Energisa</h2>
             <p class="custom-modal-info">info1</p>
             <p class="custom-modal-info">info2</p>
             <p class="custom-modal-info">info3</p>
         </div>
+            
         <p class="custom-modal-coords">Lat: -21.38770859097071 | Lon: -42.69417193593248</p>
     </div>
 </div><div class="custom-modal-overlay modal-1">
     <div class="custom-modal">
-        <button class="custom-modal-close" onclick="closeModal(this)">&times;</button>
+        <div class="custom-modal-header">
+            <div class="custom-modal-title-group">   
+                <i class="fa-solid fa-city" style="color: #ffffff;"></i>
+                <p class="custom-modal-title" style="color: white;">Arena Horto</p>
+            </div>
+            <button class="custom-modal-close" onclick="closeModal(this)">&times;</button>
+        </div>
+        
         <img class="custom-modal-img" src="https://i.imgur.com/TteVbQq.jpeg" alt="Arena Horto">
+        
         <div class="custom-modal-content">
-            <h2 class="custom-modal-title">Arena Horto</h2>
             <p class="custom-modal-info">info1</p>
             <p class="custom-modal-info">info2</p>
             <p class="custom-modal-info">info3</p>
         </div>
+            
         <p class="custom-modal-coords">Lat: -21.375777150711308 | Lon: -42.70998011516444</p>
     </div>
 </div>
@@ -277,21 +293,6 @@ body {
     padding: 2vw;
   }
 }
-.custom-modal-close {
-    position: absolute;
-    top: 10px; right: 10px;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #000000;
-    cursor: pointer;
-    z-index: 2;
-    transition: color 0.2s;
-    -webkit-text-stroke: 1px #ffffff;
-}
-.custom-modal-close:hover {
-    color: #222;
-}
 
 .custom-modal-title {
     margin: 0 0 8px 0;
@@ -308,18 +309,13 @@ body {
     margin-top: 0; 
     font-size: 12px;
     color: #888;
-    
-    position: absolute; /* Posição absoluta em relação ao .custom-modal */
-    bottom: 0; /* Ancorado no rodapé */
-    right: 0; /* Ancorado na direita */
-    padding: 6px 10px; /* Adiciona um padding para afastamento da borda */
-    
-    /* Garante que o texto das coordenadas esteja à direita */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 6px 10px;
     text-align: right;
-    
-    /* Opcional: Um fundo sutil para destacar sobre o conteúdo */
     background-color: rgba(255, 255, 255, 0.7); 
-    border-top-left-radius: 5px; /* Arredonda o canto superior esquerdo */
+    border-top-left-radius: 5px;
 }
 .custom-modal-overlay {
     position: fixed;
@@ -333,7 +329,7 @@ body {
 
 .custom-modal {
     background: #fff;
-    border-radius: 12px;
+    /* border-radius: 12px; */
     box-shadow: 0 8px 32px rgba(0,0,0,0.2); 
     max-width: 750px;
     min-height: 60vh; 
@@ -355,8 +351,8 @@ body {
     width: 100%;
     height: 220px; 
     object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    /* border-top-left-radius: 12px;
+    border-top-right-radius: 12px; */
     display: block;
 }
 
@@ -369,11 +365,66 @@ body {
     .custom-modal {
         max-width: 98vw;
         width: 90vw;
-        border-radius: 12px;
+        /* border-radius: 12px; */
     }
     .custom-modal-img {
         height: 120px; 
     }
+}
+.custom-modal-header {
+    height: 45px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0 10px; 
+    box-sizing: border-box;
+    background: #1f1f1f;
+    border-bottom: 6px solid #3EB87D;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.custom-modal-close {
+    position: static; 
+    top: auto; 
+    right: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-size: 28px;
+    display: block;
+    /* float: right;  */
+    color: #fff;
+    line-height: 45px; 
+    padding: 0;
+    margin: 0;
+    -webkit-text-stroke: initial; 
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8); 
+}
+
+.custom-modal-close:hover {
+    color: #ccc; 
+}
+
+.custom-modal-header p {
+    color: #fff;
+    font-size: 19px;
+    margin: 0;
+}
+.custom-modal-title-group {
+    display: flex;
+    gap: 8px;;
+    align-items: center;
+}
+
+.custom-modal-title-group .fa-city {
+    color: #fff;
+    /* Garante que o ícone seja alinhado verticalmente com o texto */
+    line-height: 1; 
+    vertical-align: middle; 
 }
     </style>
     
@@ -411,14 +462,14 @@ body {
     });
 </script>
     
-            <div class="folium-map" id="map_26a4a7a4cbbc1972cffca0a0132b0455" ></div>
+            <div class="folium-map" id="map_b78f55569eeef74a61689664fa4a1faf" ></div>
         
 </body>
 <script>
     
     
-            var map_26a4a7a4cbbc1972cffca0a0132b0455 = L.map(
-                "map_26a4a7a4cbbc1972cffca0a0132b0455",
+            var map_b78f55569eeef74a61689664fa4a1faf = L.map(
+                "map_b78f55569eeef74a61689664fa4a1faf",
                 {
                     center: [-21.387807, -42.69678],
                     crs: L.CRS.EPSG3857,
@@ -435,7 +486,7 @@ body {
 
         
     
-            var tile_layer_59ce3f872d54ac6b2c3ec9d3113db7e5 = L.tileLayer(
+            var tile_layer_5795a712553b280734580eef57f6020a = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -452,17 +503,17 @@ body {
             );
         
     
-            tile_layer_59ce3f872d54ac6b2c3ec9d3113db7e5.addTo(map_26a4a7a4cbbc1972cffca0a0132b0455);
+            tile_layer_5795a712553b280734580eef57f6020a.addTo(map_b78f55569eeef74a61689664fa4a1faf);
         
     
-            var marker_00230a12ce4cb331725ee3e837b3536b = L.marker(
+            var marker_44d157eb21b0fd82866707dd1ca0e7dd = L.marker(
                 [-21.38770859097071, -42.69417193593248],
                 {
 }
-            ).addTo(map_26a4a7a4cbbc1972cffca0a0132b0455);
+            ).addTo(map_b78f55569eeef74a61689664fa4a1faf);
         
     
-            var div_icon_0fc73968eb64bf1d1f5c4ffe0c202acd = L.divIcon({
+            var div_icon_af46dffacb3ae842c0b083711053227f = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-0\" class=\"custom-marker\" style=\"cursor: pointer;\"\u003e\n        \u003cspan class=\"glyphicon glyphicon-map-marker\" style=\"color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);\"\u003e\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -472,17 +523,17 @@ body {
 });
         
     
-                marker_00230a12ce4cb331725ee3e837b3536b.setIcon(div_icon_0fc73968eb64bf1d1f5c4ffe0c202acd);
+                marker_44d157eb21b0fd82866707dd1ca0e7dd.setIcon(div_icon_af46dffacb3ae842c0b083711053227f);
             
     
-            var marker_f86d9b785545bf8d877dc09bf844df53 = L.marker(
+            var marker_10bf9b80b7facbc7c7e22aacd59e3ae3 = L.marker(
                 [-21.375777150711308, -42.70998011516444],
                 {
 }
-            ).addTo(map_26a4a7a4cbbc1972cffca0a0132b0455);
+            ).addTo(map_b78f55569eeef74a61689664fa4a1faf);
         
     
-            var div_icon_e46c91d13f90c1813db0ce74587f48d1 = L.divIcon({
+            var div_icon_e2aad45ace589f6d189733245fc739ed = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-1\" class=\"custom-marker\" style=\"cursor: pointer;\"\u003e\n        \u003cspan class=\"glyphicon glyphicon-map-marker\" style=\"color:red; font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);\"\u003e\u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -492,7 +543,7 @@ body {
 });
         
     
-                marker_f86d9b785545bf8d877dc09bf844df53.setIcon(div_icon_e46c91d13f90c1813db0ce74587f48d1);
+                marker_10bf9b80b7facbc7c7e22aacd59e3ae3.setIcon(div_icon_e2aad45ace589f6d189733245fc739ed);
             
 </script>
 </html>
