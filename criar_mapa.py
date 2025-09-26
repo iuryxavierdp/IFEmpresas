@@ -103,5 +103,4 @@ mapa.get_root().html.add_child(fl.Element(js_script))
 
 mapa.save("mapa.html")
 
-
 print("Mapa salvo como 'mapa.html'")
