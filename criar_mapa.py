@@ -43,7 +43,7 @@ for index, row in df_empresas.iterrows():
 
     icon_html = f"""
     <div data-modal-id="{modal_id}" class="custom-marker" style="cursor: pointer;">
-        <i class="fa-solid fa-building-user fa-beat" style=" font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);"></i>
+        <i class="fa-solid fa-building-user" style=" font-size: 24px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); transform: translate(-50%, -50%);"></i>
     </div>
     """
     
@@ -102,5 +102,6 @@ mapa.get_root().html.add_child(fl.Element(css_script))
 mapa.get_root().html.add_child(fl.Element(js_script))
 
 mapa.save("mapa.html")
+
 
 print("Mapa salvo como 'mapa.html'")
