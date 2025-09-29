@@ -3,7 +3,12 @@
         <div class="custom-modal-header">
             <div class="custom-modal-title-group">   
                 <i class="fa-solid fa-city" style="color: #ffffff;"></i>
-                <p class="custom-modal-title" style="color: white;">{nome}</p>
+                <p class="custom-modal-title" style="color: white;">
+                    {nome} 
+                </p>
+                <p class="custom-modal-subtitle" style="color: white;">
+                    ({segmento})
+                </p>
             </div>
             <button class="custom-modal-close" onclick="closeModal(this)">&times;</button>
         </div>
@@ -11,11 +16,11 @@
         <img class="custom-modal-img" src="{img}" alt="{nome}">
         
         <div class="custom-modal-content">
-            <p class="custom-modal-info">info1</p>
+            <p class="custom-modal-info">{historia}</p>
             <p class="custom-modal-info">info2</p>
             <p class="custom-modal-info">info3</p>
         </div>
             
-        <p class="custom-modal-coords">{endereco}</p>
+        <p class="custom-modal-coords" style="margin-bottom: 5px;">{endereco}</p>
     </div>
 </div>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empresas em Cataguases</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src="scripts/mudarIdioma.js" defer></script> 
 </head>
 <body>
     <div class="header">
@@ -12,20 +13,31 @@
             <a href="index.html"><img src="media/IF.png"></a>
         </div>
         <nav class="navigation">
-            <a href="#" class="nav-button">Início</a>
-            <a href="#" class="nav-button">Sobre o Projeto</a>
+            <a href="#" class="nav-button" id="link-inicio">Início</a>
+            <a href="#" class="nav-button" id="link-sobre">Sobre o Projeto</a>
             <a href="https://www.ifsudestemg.edu.br/cataguases" class="nav-button">IF Sudeste MG</a>
+
+            <div class="switch">
+                <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" onchange="mudarIdioma(this.checked)">
+                <label for="language-toggle"></label>
+                <span class="on">BR</span>
+                <span class="off">EN</span>
+            </div>
+
             <a href="#" class="nav-button" style="visibility: hidden">____</a>
         </nav>
     </div>
-
+    
     <main class="content-container">
-        <iframe src="mapa.html" class="map-frame"></iframe>
+        <iframe src="mapa.html" id="br-map" class="map-frame"></iframe>
+        <iframe src="mapa-en.html" id="en-map" class="map-frame" style="display: none;"></iframe>
     </main>
 
     <div class="footer">
-        <p>&copy; Tecnologia em Processos Gerenciais 2025. Todos os direitos reservados.</p>
+        <p id="link-footer">&copy; Tecnologia em Processos Gerenciais 2025. Todos os direitos reservados.</p>
     </div>
+</body>
+</html>
 </body>
 </html>
 
