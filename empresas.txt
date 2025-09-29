@@ -1,5 +1,0 @@
-Nome,Endereco,Latitude,Longitude,Img
-Energisa,Av. Astolfo Dutra 70 - Centro,-21.38770859097071,-42.694171935932474,https://leopoldinense.com.br/images/noticias/24882/05092448_P4280011.JPG
-Arena Horto,R. Nossa Sra. das Dores 520 - Horto Florestal,-21.375777150711308,-42.70998011516444,https://i.imgur.com/TteVbQq.jpeg
-Copasa,R. Guilhermino César 13 - Bela Vista,-21.38798992092675, -42.68885847116394,https://www.ovigilanteonline.com.br/site/wp-content/uploads/2022/02/Copasa-sede.jpeg
-Bahamas,Praça Manoel Inácio Peixoto 96 - Centro,-21.382863154160333, -42.69237043435015,https://public-rf-upload.minhawebradio.net/1854/news/125249bd0b067dcbaaf9f65e24fabc3a.jpeg
