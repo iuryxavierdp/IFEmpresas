@@ -251,6 +251,8 @@ body {
 .custom-modal-content {
     padding: 18px 18px 10px 18px;
     text-align: left;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .custom-modal-img {
@@ -435,4 +437,5 @@ input.check-toggle-round-flat + label:after {
 
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
+
 }
