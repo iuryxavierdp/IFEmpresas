@@ -1,6 +1,7 @@
 :root {
   --primaria: #1d1d1d;
-  --secundaria: #f6d14e;
+  /* --secundaria: #f6d14e; */
+  --secundaria: #b7b7b7;
 }
 
 .header {
@@ -578,4 +579,5 @@ input.check-toggle-round-flat:checked + label:after {
 .info-highlight {
     font-weight: bold;
     color: var(--primaria); /* Usa a cor primária para destacar o valor */
+
 }
