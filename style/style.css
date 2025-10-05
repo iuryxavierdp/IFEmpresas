@@ -158,11 +158,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .header .logo img {
-        /* Define a largura máxima da imagem da logo */
-        max-width: 80px; /* Altere este valor para o tamanho desejado */
-        height: auto; /* Mantém a proporção */
-    }
   .header {
     position: fixed;
     top: 0;
@@ -172,13 +167,13 @@ body {
     padding: 0 16px;
   }
   .nav-button {
-    font-size: 13px; 
+    font-size: 15px; 
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center; 
     flex-direction: column;
-    padding: 3px 5px !important;
+    /* padding: 3px 5px !important; */
   }
   .footer {
     position: fixed;
@@ -442,5 +437,82 @@ input.check-toggle-round-flat + label:after {
 
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
+}
+/* ================================================= */
+/* ESTILO GERAL PARA O BOTÃO HAMBÚRGUER (MOBILE) */
+/* ================================================= */
+.menu-toggle {
+    display: none; /* Esconde o botão por padrão (desktop) */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001; /* Fica acima de tudo */
+}
 
+/* ================================================= */
+/* MEDIA QUERY: ATIVAR MENU HAMBÚRGUER (Max-width 768px) */
+/* ================================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. MOSTRAR O BOTÃO HAMBÚRGUER */
+    .menu-toggle {
+        display: block; /* Mostra o botão em telas pequenas */
+        /* margin-right: 30px; */
+    }
+
+    /* 2. OCULTAR O MENU DE NAVEGAÇÃO POR PADRÃO */
+    .navigation {
+        display: none; /* Esconde o menu por padrão */
+        
+        /* Estilo da navegação quando aberta (Menu 'Side Drawer') */
+        position: fixed;
+        top: 0; /* Começa no topo */
+        left: 0;
+        transform: translateX(-100%); 
+        transition: transform 0.3s ease-in-out;
+        /* height: 100%; */
+        background-color: var(--primaria);
+        flex-direction: column; /* Organiza os links verticalmente */
+        padding: 25px;
+        margin-top: 56px;;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
+        z-index: 1000;
+        overflow-y: auto; /* Adiciona scroll se o menu for muito grande */
+        
+        /* Centraliza o conteúdo verticalmente */
+        align-items: center; 
+        gap: 10px;
+    }
+    
+    /* 3. ESTILO DOS LINKS NO MENU MOBILE */
+    .navigation .nav-button,
+    .navigation .switch {
+        /* width: 100%;
+        padding: 10px 20px; */
+        text-align: left;
+    }
+    
+    /* 4. CLASSE PARA MOSTRAR O MENU (Adicionada pelo JS) */
+    .navigation.is-open {
+        display: flex; /* Muda de 'none' para 'flex' quando a classe é ativada */
+        transform: translateX(0); 
+        border-radius: 0 0 20px;
+    }
+    
+    /* 5. Ajuste do Logo (do exemplo anterior) */
+  
+    
+    /* 6. Ajuste do Header (opcional) */
+    .header {
+        height: 50px;
+        /* padding: 0 10px; */
+        justify-content: flex-start;
+        /* gap: 15px; */
+    }
+    #btninvi{
+        display: none;
+    }
 }
