@@ -482,7 +482,7 @@ input.check-toggle-round-flat:checked + label:after {
         flex-direction: column; /* Organiza os links verticalmente */
         padding: 25px;
         margin-top: 56px;;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.5); 
         z-index: 1000;
         overflow-y: auto; /* Adiciona scroll se o menu for muito grande */
         display: flex;
@@ -520,4 +520,5 @@ input.check-toggle-round-flat:checked + label:after {
     #btninvi{
         display: none;
     }
+
 }
