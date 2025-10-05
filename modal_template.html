@@ -3,24 +3,31 @@
         <div class="custom-modal-header">
             <div class="custom-modal-title-group">   
                 <i class="fa-solid fa-city" style="color: #ffffff;"></i>
-                <p class="custom-modal-title" style="color: white;">
-                    {nome} 
-                </p>
-                <p class="custom-modal-subtitle" style="color: white;">
-                    ({segmento})
-                </p>
+                
+                <p class="custom-modal-title lang-pt" style="color: white;">{nome}</p>
+                <p class="custom-modal-title lang-en" style="color: white; display: none;">{nome_en}</p>
+                
+                <p class="custom-modal-subtitle lang-pt" style="color: white;">({segmento})</p>
+                <p class="custom-modal-subtitle lang-en" style="color: white; display: none;">({segmento_en})</p>
             </div>
+            
             <button class="custom-modal-close" onclick="closeModal(this)">&times;</button>
         </div>
         
         <img class="custom-modal-img" src="{img}" alt="{nome}">
         
         <div class="custom-modal-content">
-            <p class="custom-modal-info">{historia}</p>
-            <p class="custom-modal-info">info2</p>
-            <p class="custom-modal-info">info3</p>
+            <p class="custom-modal-info lang-pt">{historia}</p>
+            <p class="custom-modal-info lang-en" style="display: none;">{historia_en}</p>
+
+            <p class="custom-modal-info lang-pt">info2</p>
+            <p class="custom-modal-info lang-en" style="display: none;">info2_en</p>
+            
+            <p class="custom-modal-info lang-pt">info3</p>
+            <p class="custom-modal-info lang-en" style="display: none;">info3_en</p>
         </div>
             
-        <p class="custom-modal-coords" style="margin-bottom: 5px;">{endereco}</p>
+        <p class="custom-modal-coords lang-pt" style="margin-bottom: 5px;">{endereco}</p>
+        <p class="custom-modal-coords lang-en" style="margin-bottom: 5px; display: none;">{endereco_en}</p>
     </div>
 </div>
