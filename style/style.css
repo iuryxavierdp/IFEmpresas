@@ -497,7 +497,7 @@ input.check-toggle-round-flat:checked + label:after {
     .navigation .switch {
         /* width: 100%;
         padding: 10px 20px; */
-        text-align: left;
+        /* text-align: left; */
     }
     
     /* 4. CLASSE PARA MOSTRAR O MENU (Adicionada pelo JS) */
@@ -522,3 +522,4 @@ input.check-toggle-round-flat:checked + label:after {
     }
 
 }
+
