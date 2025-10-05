@@ -575,9 +575,12 @@ input.check-toggle-round-flat:checked + label:after {
     text-align: center;
 }
 
+.info-item span {
+    font-weight: bold;
+}
+
 /* Estilo de destaque para os valores das variáveis */
 .info-highlight {
-    font-weight: bold;
+    font-weight: normal !important;
     color: var(--primaria); /* Usa a cor primária para destacar o valor */
-
 }
