@@ -506,14 +506,6 @@ input.check-toggle-round-flat:checked + label:after {
         margin-bottom: 0; 
     }
 
-    /* 3. ESTILO DOS LINKS NO MENU MOBILE */
-    .navigation .nav-button,
-    .navigation .switch {
-        /* width: 100%;
-        padding: 10px 20px; */
-        /* text-align: left; */
-    }
-    
     /* 4. CLASSE PARA MOSTRAR O MENU (Adicionada pelo JS) */
     .navigation.is-open {
         visibility: visible;
@@ -534,4 +526,61 @@ input.check-toggle-round-flat:checked + label:after {
     #btninvi{
         display: none;
     }
+}
+
+/* ================================================= */
+/* ESTILOS DA MODAL: CONTEÚDO E INFORMAÇÕES */
+/* ================================================= */
+
+/* Espaçamento geral do conteúdo */
+.custom-modal-content {
+    padding: 15px 20px;
+    /* Ajuste o padding conforme o tamanho final da sua modal */
+}
+
+/* Estilo para a seção de história/descrição */
+.custom-modal-history {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #333; /* Cor escura para leitura */
+    /* Se a história for longa, você pode adicionar um border-bottom sutil aqui: */
+    /* border-bottom: 1px dashed #ddd; */ 
+    /* padding-bottom: 15px; */
+}
+
+/* Container para as informações-chave (grid) */
+.custom-modal-grid {
+    /* Usa flex para garantir que os blocos PT e EN se sobreponham, mas é desnecessário se eles já estão com display: none */
+}
+
+.modal-info-pt,
+.modal-info-en {
+    display: grid;
+    grid-template-columns: 1fr; /* Coluna única (ideal para mobile) */
+    gap: 12px; /* Espaço entre as linhas de informação */
+    width: 100%;
+}
+
+/* Estilo de cada linha de informação (ícone + texto) */
+.info-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Estilo dos ícones */
+.info-item i {
+    color: var(--secundaria); /* Usa a cor secundária para os ícones */
+    margin-right: 12px;
+    font-size: 1.1em;
+    min-width: 20px; /* Garante que os ícones fiquem alinhados */
+    text-align: center;
+}
+
+/* Estilo de destaque para os valores das variáveis */
+.info-highlight {
+    font-weight: bold;
+    color: var(--primaria); /* Usa a cor primária para destacar o valor */
 }

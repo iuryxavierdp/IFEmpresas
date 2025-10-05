@@ -1,5 +1,6 @@
 <div class="custom-modal-overlay">
     <div class="custom-modal">
+        
         <div class="custom-modal-header">
             <div class="custom-modal-title-group">   
                 <i class="fa-solid fa-city" style="color: #ffffff;"></i>
@@ -17,14 +18,58 @@
         <img class="custom-modal-img" src="{img}" alt="{nome}">
         
         <div class="custom-modal-content">
-            <p class="custom-modal-info lang-pt">{historia}</p>
-            <p class="custom-modal-info lang-en" style="display: none;">{historia_en}</p>
-
-            <p class="custom-modal-info lang-pt">info2</p>
-            <p class="custom-modal-info lang-en" style="display: none;">info2_en</p>
             
-            <p class="custom-modal-info lang-pt">info3</p>
-            <p class="custom-modal-info lang-en" style="display: none;">info3_en</p>
+            <p class="custom-modal-history lang-pt">{historia}</p>
+            <p class="custom-modal-history lang-en" style="display: none;">{historia_en}</p>
+
+            <div class="custom-modal-grid">
+
+                <div class="modal-info-pt lang-pt">
+                    
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <span>{tipoempresa} (<span class="info-highlight">{funcionarios} funcionários</span>)</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Contribuição Econômica: <span class="info-highlight">{economia}</span></span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-award"></i>
+                        <span>Prêmios/Reconhecimentos: <span class="info-highlight">{premios}</span></span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>Abrangência Geográfica: <span class="info-highlight">{abrangencia}</span></span>
+                    </div>
+                </div>
+
+                <div class="modal-info-en lang-en" style="display: none;">
+                    
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <span>{tipoempresa_en} (<span class="info-highlight">{funcionarios_en} employees</span>)</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Economic Contribution: <span class="info-highlight">{economia_en}</span></span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-award"></i>
+                        <span>Awards/Recognitions: <span class="info-highlight">{premios_en}</span></span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>Geographical Scope: <span class="info-highlight">{abrangencia_en}</span></span>
+                    </div>
+                </div>
+            </div>
         </div>
             
         <p class="custom-modal-coords lang-pt" style="margin-bottom: 5px;">{endereco}</p>

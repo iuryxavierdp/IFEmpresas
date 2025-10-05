@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // 3. Opcional: Fecha o menu quando um link é clicado (útil para navegação)
-        const navLinks = mainNavigation.querySelectorAll('.nav-button, .switch'); // Inclui links e o switch
+        // const navLinks = mainNavigation.querySelectorAll('.nav-button'); // Inclui links e o switch
         navLinks.forEach(element => {
             element.addEventListener('click', () => {
                 // Verifica se a tela é pequena o suficiente para ter o menu aberto

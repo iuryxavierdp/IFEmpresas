@@ -17,7 +17,7 @@ df_empresas = df_empresas.rename(columns={
     'IMAGEM': 'img',
     'NUM_FUNCIONÁRIOS': 'funcionarios',
     'TIPO_DE_EMPRESA': 'tipoempresa',
-    'CONTRIBUIÇÃO_ECONOMIA_LOCAL': 'enconomia',
+    'CONTRIBUIÇÃO_ECONOMIA_LOCAL': 'economia',
     'CERTIFICAÇÕES_E_PRÊMIOS': 'premios',
     'ABRANGÊNCIA_PRODUÇÃO': 'abrangencia'
 })
@@ -33,7 +33,7 @@ df_empresas_en = df_empresas_en.rename(columns={
     'IMAGE': 'img_en',
     'NUM_EMPLOYEES': 'funcionarios_en',
     'COMPANY_TYPE': 'tipoempresa_en',
-    'LOCAL_ECONOMY_CONTRIBUTION': 'enconomia_en',
+    'LOCAL_ECONOMY_CONTRIBUTION': 'economia_en',
     'CERTIFICATIONS_AND_AWARDS': 'premios_en',
     'PRODUCTION_COVERAGE': 'abrangencia_en' 
 })
