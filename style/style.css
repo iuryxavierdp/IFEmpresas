@@ -158,6 +158,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  .header .logo img {
+        /* Define a largura máxima da imagem da logo */
+        max-width: 80px; /* Altere este valor para o tamanho desejado */
+        height: auto; /* Mantém a proporção */
+    }
   .header {
     position: fixed;
     top: 0;
@@ -437,4 +442,5 @@ input.check-toggle-round-flat + label:after {
 
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
+
 }
