@@ -217,10 +217,10 @@ body {
     margin-top: 0; 
     font-size: 12px;
     color: #888;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     right: 0;
-    padding: 6px 10px;
+    padding: 6px 0px 0px 10px;
     text-align: right;
     background-color: rgba(255, 255, 255, 0.7); 
 }
@@ -547,11 +547,6 @@ input.check-toggle-round-flat:checked + label:after {
     /* Se a história for longa, você pode adicionar um border-bottom sutil aqui: */
     /* border-bottom: 1px dashed #ddd; */ 
     /* padding-bottom: 15px; */
-}
-
-/* Container para as informações-chave (grid) */
-.custom-modal-grid {
-    /* Usa flex para garantir que os blocos PT e EN se sobreponham, mas é desnecessário se eles já estão com display: none */
 }
 
 .modal-info-pt,
