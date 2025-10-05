@@ -1,6 +1,6 @@
 :root {
-  --primaria: #1f1f1f;
-  --secundaria: #3EB87D;
+  --primaria: #1d1d1d;
+  --secundaria: #f6d14e;
 }
 
 .header {
@@ -355,23 +355,23 @@ body {
 }
 
 input.check-toggle-round-flat:checked ~ .off {
-  color: var(--secundaria);
+  color: var(--primaria);
 }
 
 input.check-toggle-round-flat:checked ~ .on {
-  color: #fff;
+  color: var(--primaria);
 }
 
 .switch > span.on {
   left: 0;
   padding-left: 2px;
-  color: var(--secundaria);
+  color: var(--primaria);
 }
 
 .switch > span.off {
   right: 0;
   padding-right: 4px;
-  color: #fff;
+  color: var(--primaria);
 }
 
 .check-toggle {
@@ -437,5 +437,4 @@ input.check-toggle-round-flat + label:after {
 
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
-
 }
