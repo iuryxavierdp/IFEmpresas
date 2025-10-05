@@ -19,7 +19,7 @@ function mudarIdioma(isEnglish) {
     }
     if (linkFooter) {
         linkFooter.textContent = isEnglish 
-            ? "© Managerial Processes Technology 2025. All rights reserved." 
+            ? "© Technology in Management Processes 2025. All rights reserved." 
             : "© Tecnologia em Processos Gerenciais 2025. Todos os direitos reservados.";
     }
     document.documentElement.lang = isEnglish ? 'en' : 'pt-br';
@@ -51,3 +51,4 @@ function callMapTranslation(isEnglish) {
 document.addEventListener('DOMContentLoaded', function() {
     callMapTranslation(isEnglishActive);
 });
+
