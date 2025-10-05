@@ -4,6 +4,42 @@ from branca.element import IFrame
 
 dir = 'C:/Users/Iury/Desktop/IF/ProjetoMapa'
 df_empresas = pd.read_excel(f'{dir}/dados/empresas.xlsx', sheet_name=0)
+df_empresas_en = pd.read_excel(f'{dir}/dados/empresas_en.xlsx', sheet_name=0)
+
+# 1. Renomear colunas do PT para ter as chaves simples (ex: nome)
+df_empresas = df_empresas.rename(columns={
+    'NOME_EMPRESA': 'nome',
+    'ENDEREÇO': 'endereco',
+    'LATITUDE': 'latitude',
+    'LONGITUDE': 'longitude',
+    'SEGMENTO_DE_ATUAÇÃO': 'segmento',
+    'HISTÓRIA_BREVE': 'historia',
+    'IMAGEM': 'img',
+    'NUM_FUNCIONÁRIOS': 'funcionarios',
+    'TIPO_DE_EMPRESA': 'tipoempresa',
+    'CONTRIBUIÇÃO_ECONOMIA_LOCAL': 'enconomia',
+    'CERTIFICAÇÕES_E_PRÊMIOS': 'premios',
+    'ABRANGÊNCIA_PRODUÇÃO': 'abrangencia'
+})
+
+# 2. Renomear colunas do EN para ter o sufixo '_en' (ex: nome_en)
+df_empresas_en = df_empresas_en.rename(columns={
+    'COMPANY_NAME': 'nome_en',
+    'ADDRESS': 'endereco_en',
+    'LATITUDE': 'latitude_en',
+    'LONGITUDE': 'longitude_en',
+    'SECTOR_OF_ACTIVITY': 'segmento_en',
+    'BRIEF_HISTORY': 'historia_en',
+    'IMAGE': 'img_en',
+    'NUM_EMPLOYEES': 'funcionarios_en',
+    'COMPANY_TYPE': 'tipoempresa_en',
+    'LOCAL_ECONOMY_CONTRIBUTION': 'enconomia_en',
+    'CERTIFICATIONS_AND_AWARDS': 'premios_en',
+    'PRODUCTION_COVERAGE': 'abrangencia_en' 
+})
+
+# 3. Juntar os DataFrames
+df_combinado = df_empresas.join(df_empresas_en, how='inner')
 
 with open(f'{dir}/style/style.css', 'r', encoding='utf-8') as f:
     css_content = f.read()
@@ -23,25 +59,16 @@ with open('modal_template.html', 'r', encoding='utf-8') as f:
     template_html = f.read()
 
 modal_html = ""
-for index, row in df_empresas.iterrows():
-    content_html = template_html.format(
-        nome = row['NOME_EMPRESA'],
-        endereco = row['ENDEREÇO'],
-        latitude = row['LATITUDE'],
-        longitude = row['LONGITUDE'],
-        segmento = row['SEGMENTO_DE_ATUAÇÃO'],
-        historia = row['HISTÓRIA_BREVE'],
-        img = row['IMAGEM'],
-        funcionarios = row['NUM_FUNCIONÁRIOS'],
-        tipoempresa = row['TIPO_DE_EMPRESA'],
-        enconomia = row['CONTRIBUIÇÃO_ECONOMIA_LOCAL'],
-        premios = row['CERTIFICAÇÕES_E_PRÊMIOS'],
-        abrangencia = ['ABRANGÊNCIA_PRODUÇÃO']
-    )
+
+for index, row in df_combinado.iterrows():
+    
+    dados_modal = row.to_dict()
+    content_html = template_html.format(**dados_modal)
 
     modal_id = f"modal-{index}"
     modal_html += content_html.replace('custom-modal-overlay', f'custom-modal-overlay {modal_id}')
 
+    # O icon_html agora inclui o nome em PT e EN, com classes para alternância JS
     icon_html = f"""
     <div data-modal-id="{modal_id}" class="custom-marker" 
         style="
@@ -61,7 +88,7 @@ for index, row in df_empresas.iterrows():
             ">
         </i>
         
-        <span 
+        <span class="lang-pt"
             style="
                 font-size: 10px; 
                 color: #1f1f1f; 
@@ -73,13 +100,28 @@ for index, row in df_empresas.iterrows():
                 font-weight: bold; 
                 white-space: nowrap;
             ">
-            {row['NOME_EMPRESA']}
+            {row['nome']}
+        </span>
+        <span class="lang-en"
+            style="
+                font-size: 10px; 
+                color: #1f1f1f; 
+                background: #fff; 
+                padding: 1px 4px; 
+                border-radius: 3px; 
+                margin-top: -5px; 
+                box-shadow: 0 1px 3px rgba(0,0,0,0.3); 
+                font-weight: bold; 
+                white-space: nowrap;
+                display: none; /* Esconde o nome em EN por padrão */
+            ">
+            {row['nome_en']}
         </span>
     </div>
     """
 
     fl.Marker(
-        location=[row['LATITUDE'], row['LONGITUDE']],
+        location=[row['latitude'], row['longitude']],
         icon = fl.DivIcon(
             html=icon_html,
             icon_anchor=[0, 0]
@@ -94,6 +136,22 @@ css_script = f"""
 
 js_script = """
 <script>
+    // FUNÇÃO INJETADA PARA TRADUZIR O CONTEÚDO DO MAPA/MODAL (AGORA CORRETA)
+    function mudarIdioma(isEnglish) {
+        var ptElements = document.querySelectorAll('.lang-pt');
+        var enElements = document.querySelectorAll('.lang-en');
+        
+        if (isEnglish) {
+            // Mostrar Inglês, Esconder Português
+            ptElements.forEach(el => el.style.display = 'none');
+            enElements.forEach(el => el.style.display = ''); 
+        } else {
+            // Mostrar Português, Esconder Inglês
+            ptElements.forEach(el => el.style.display = ''); 
+            enElements.forEach(el => el.style.display = 'none');
+        }
+    }
+
     function closeModal(button) {
         var modal = button.closest('.custom-modal-overlay');
         modal.style.display = 'none';
@@ -134,4 +192,4 @@ mapa.get_root().html.add_child(fl.Element(js_script))
 mapa.save(f'{dir}//mapa.html')
 
 print("Mapa salvo como 'mapa.html'")
-print(index+1,"empresas cadastradas")
+print(len(df_combinado),"empresas cadastradas")

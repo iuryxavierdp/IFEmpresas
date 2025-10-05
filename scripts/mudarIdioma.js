@@ -1,40 +1,53 @@
-const linkInicio = document.getElementById('link-inicio');
-const linkSobre = document.getElementById('link-sobre');
-const linkFooter = document.getElementById('link-footer');
+// Arquivo: scripts/mudarIdioma.js (Versão Final)
 
-const brIframe = document.getElementById('br-map');
-const enIframe = document.getElementById('en-map');
+// Variável global para armazenar o estado de idioma atual
+let isEnglishActive = false;
 
-function mudarIdioma(checked) {
-    if (checked) {
-        // EN
+function mudarIdioma(isEnglish) {
+    isEnglishActive = isEnglish; // Atualiza o estado
+    
+    // 1. Traduzir o conteúdo da página principal (index.html)
+    var linkInicio = document.getElementById('link-inicio');
+    var linkSobre = document.getElementById('link-sobre');
+    var linkFooter = document.getElementById('link-footer');
+    
+    if (linkInicio) {
+        linkInicio.textContent = isEnglish ? "Home" : "Início";
+    }
+    if (linkSobre) {
+        linkSobre.textContent = isEnglish ? "About the Project" : "Sobre o Projeto";
+    }
+    if (linkFooter) {
+        linkFooter.textContent = isEnglish 
+            ? "© Managerial Processes Technology 2025. All rights reserved." 
+            : "© Tecnologia em Processos Gerenciais 2025. Todos os direitos reservados.";
+    }
+    document.documentElement.lang = isEnglish ? 'en' : 'pt-br';
+    
+    // 2. Chamar a tradução DENTRO do iframe (mapa e modais)
+    callMapTranslation(isEnglish);
+}
+
+function callMapTranslation(isEnglish) {
+    var mapFrame = document.getElementById('br-map');
+    
+    if (mapFrame) {
         
-        if (linkInicio) linkInicio.textContent = 'Home';
-        if (linkSobre) linkSobre.textContent = 'About the Project';
-        if (linkFooter) linkFooter.textContent = '© Technology in Management Processes 2025. All rights reserved.';
-
-        if (brIframe) {
-            brIframe.style.display = 'none';
-            brIframe.src = 'mapa.html';
-        }
-        if (enIframe) {
-            enIframe.style.display = 'block';
-        }
-
-        
-    } else {
-        // BR
-
-        if (linkInicio) linkInicio.textContent = 'Início';
-        if (linkSobre) linkSobre.textContent = 'Sobre o Projeto';
-        if (linkFooter) linkFooter.textContent = '© Tecnologia em Processos Gerenciais 2025. Todos os direitos reservados.';
-
-        if (brIframe) {
-            brIframe.style.display = 'block';
-            enIframe.src = 'mapa-en.html'; 
-        }
-        if (enIframe) {
-            enIframe.style.display = 'none';
+        // Verifica se a função já existe (o mapa já carregou)
+        if (mapFrame.contentWindow && typeof mapFrame.contentWindow.mudarIdioma === 'function') {
+             mapFrame.contentWindow.mudarIdioma(isEnglish);
+        } else {
+             // Se não carregou, adiciona o evento de 'onload' e tenta novamente
+             mapFrame.onload = function() {
+                if (mapFrame.contentWindow && typeof mapFrame.contentWindow.mudarIdioma === 'function') {
+                    mapFrame.contentWindow.mudarIdioma(isEnglish);
+                }
+             };
         }
     }
 }
+
+// Garante que se o mapa carregar depois do switch ser clicado, ele aplica o idioma
+document.addEventListener('DOMContentLoaded', function() {
+    callMapTranslation(isEnglishActive);
+});
