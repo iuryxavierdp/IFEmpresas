@@ -477,7 +477,7 @@ input.check-toggle-round-flat:checked + label:after {
         transform: translateX(-100%); 
         transition: transform 0.3s ease-in-out, visibility 0s 0.3s;
         /* height: 100%; */
-        width: 28%;
+        width: 30%;
         background-color: var(--primaria);
         flex-direction: column; /* Organiza os links verticalmente */
         padding: 25px;
@@ -492,6 +492,20 @@ input.check-toggle-round-flat:checked + label:after {
         border-radius: 0 0 20px;
     }
     
+    .navigation .nav-button {
+        width: 100%;
+        border-bottom: 1px solid var(--secundaria); 
+        padding-bottom: 10px; 
+        padding-top: 10px; 
+        margin-bottom: 5px; 
+        margin-top: 5px;
+    }
+    .navigation .switch,
+    #btninvi {
+        border-bottom: none;
+        margin-bottom: 0; 
+    }
+
     /* 3. ESTILO DOS LINKS NO MENU MOBILE */
     .navigation .nav-button,
     .navigation .switch {
@@ -520,6 +534,4 @@ input.check-toggle-round-flat:checked + label:after {
     #btninvi{
         display: none;
     }
-
 }
-
