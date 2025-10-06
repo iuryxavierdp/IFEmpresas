@@ -63,6 +63,12 @@ modal_html = ""
 for index, row in df_combinado.iterrows():
     
     dados_modal = row.to_dict()
+    
+    if not pd.isna(dados_modal['funcionarios']):
+        dados_modal['funcionarios'] = int(dados_modal['funcionarios'])
+    if not pd.isna(dados_modal['funcionarios_en']):
+        dados_modal['funcionarios_en'] = int(dados_modal['funcionarios_en'])
+    
     content_html = template_html.format(**dados_modal)
 
     modal_id = f"modal-{index}"
