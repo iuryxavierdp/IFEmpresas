@@ -71,8 +71,11 @@
                 </div>
             </div>
             <div class="modal-address-group">
-                <p class="custom-modal-coords lang-pt">{endereco}</p>
-                <p class="custom-modal-coords lang-en" style="display: none;">{endereco_en}</p>
+                <a class="custom-modal-coords lang-pt map-link" href='https://www.google.com/maps/search/?api=1&query={latitude},{longitude}' 
+                target='_blank' rel='noopener noreferrer'>{endereco}</a>
+
+                <a class="custom-modal-coords lang-en map-link" href='https://www.google.com/maps/search/?api=1&query={latitude},{longitude}' 
+                target='_blank' rel='noopener noreferrer' style="display: none;">{endereco_en}</a>
             </div>
         </div>
     </div>

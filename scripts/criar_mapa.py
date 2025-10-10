@@ -3,6 +3,7 @@ import folium as fl
 from branca.element import IFrame
 
 dir = 'C:/Users/Iury/Desktop/IF/ProjetoMapa'
+# dir = 'F:\IF\ProjetoMapa'
 df_empresas = pd.read_excel(f'{dir}/dados/empresas.xlsx', sheet_name=0)
 df_empresas_en = pd.read_excel(f'{dir}/dados/empresas_en.xlsx', sheet_name=0)
 
@@ -44,7 +45,7 @@ df_combinado = df_empresas.join(df_empresas_en, how='inner')
 with open(f'{dir}/style/style.css', 'r', encoding='utf-8') as f:
     css_content = f.read()
 
-tiles = 'CartoDB.Positron'
+tiles = 'OPNVKarte'
 attr = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
 mapa = fl.Map(

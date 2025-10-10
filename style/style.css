@@ -239,7 +239,7 @@ body {
     background: #fff;
     box-shadow: 0 8px 32px rgba(0,0,0,0.2); 
     max-width: 750px;
-    min-height: 60vh; 
+    /* min-height: 60vh;  */
     max-height: 80vh;
     width: 90vw;
     padding: 0;
@@ -583,4 +583,22 @@ input.check-toggle-round-flat:checked + label:after {
 .info-highlight {
     font-weight: normal !important;
     color: var(--primaria); /* Usa a cor primária para destacar o valor */
+}
+
+/* 2. Estilo do link em si */
+.modal-address-group .map-link {
+    
+    /* ESSENCIAL: Faz o link ocupar toda a largura do seu contêiner (<p>) */
+    display: block; 
+    
+    /* Mantém o estilo de texto limpo */
+    text-decoration: none;
+    color: inherit; 
+    transition: color 0.2s;
+}
+
+/* 3. Efeito ao passar o mouse */
+.modal-address-group .map-link:hover {
+    color: var(--secundaria);
+    text-decoration: underline;
 }
