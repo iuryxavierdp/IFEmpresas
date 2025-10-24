@@ -2,8 +2,9 @@ import pandas as pd
 import folium as fl 
 from branca.element import IFrame
 
-dir = 'C:/Users/Iury/Desktop/IF/ProjetoMapa'
+#dir = 'C:/Users/Iury/Desktop/IF/ProjetoMapa'
 # dir = 'F:\IF\ProjetoMapa'
+dir = 'C:/Users/Iury/Desktop/Nova pasta'
 df_empresas = pd.read_excel(f'{dir}/dados/empresas.xlsx', sheet_name=0)
 df_empresas_en = pd.read_excel(f'{dir}/dados/empresas_en.xlsx', sheet_name=0)
 
