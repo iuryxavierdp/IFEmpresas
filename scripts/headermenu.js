@@ -59,14 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 1. Clique no link "Sobre o Projeto"
-    if (linkSobre) {
-        linkSobre.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            abrirModal();
-        });
-    }
-
     // 2. Clique no 'X' ou fora do modal para fechar (Requer que o botão 'X' no HTML chame closeModal(this) ou fecharModal())
     // O seu HTML do 'sobre.html' já tem: <button class="custom-modal-close" onclick="closeModal(this)">&times;</button>
     // Precisamos garantir que o clique no overlay feche.

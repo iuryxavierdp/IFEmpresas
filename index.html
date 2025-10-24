@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empresas em Cataguases</title>
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/about.css">
     <script src="scripts/mudarIdioma.js" defer></script> 
     <script src="scripts/headermenu.js" defer></script> 
     <script src="scripts/modal.js" defer></script> 
@@ -19,12 +18,12 @@
         </button>
 
         <div class="logo">
-            <a><img src="media/teste1.png"></a>
+            <a><img src="media/logo.png"></a>
         </div>
 
         <nav class="navigation" id="main-navigation">
             <a href="#" class="nav-button" id="link-inicio">Início</a>
-            <a href="#" class="nav-button" id="link-sobre">Sobre o Projeto</a>
+            <a href="sobre.html" class="nav-button" id="link-sobre">Sobre o Projeto</a>
             <a href="https://www.ifsudestemg.edu.br/cataguases" class="nav-button">IF Sudeste MG</a>
 
             <div class="switch">
@@ -39,47 +38,8 @@
     
     <main class="content-container">
         <iframe src="mapa.html" id="br-map" class="map-frame"></iframe>
+        <iframe src="sobre.html" id="about-frame" class="about-frame" style="display: none;"></iframe>
     </main>
-    <div class="custom-modal-overlay" id="sobre-modal" style="display: none;">
-            <div class="">
-                <div class="main-container" style="animation: modalIn 0.2s;">
-                    <div class="custom-modal-header">
-                        <div class="custom-modal-title-group">   
-                            <i class="fa fa-info-circle" aria-hidden="true" style="color: #ffffff; font-size: 20px;"></i>
-                            
-                            <p id="link-sobre-title" class="custom-modal-title lang-pt" style="color: white;">Sobre o Projeto</p>
-                        </div>
-                        
-                        <button class="custom-modal-close" onclick="closeModal(this)">&times;</button>
-                    </div>
-                    <div class="about-card">
-                        
-                        <div class="card-image-section">
-                            <img src="https://tribunademinas.com.br/wp-content/uploads/2025/07/selecao-professor-cataguases-minas-gerais-1200x675.jpg" alt="Paisagem de Fundo" class="card-image">
-                            
-                            <img src="https://www.ifsudestemg.edu.br/comunicacao-social/logos/cataguases/logo_vertical_cataguases-1.png" alt="Ícone Centralizado" class="centered-overlay-image">
-                        </div>
-
-                        <div class="card-info-section">
-                            
-                            <div class="info-block">
-                                <h3 class="title">DIGITAL BUSINESS MAP OF CATAGUASES</h3>
-                                <p id="description1" class="description lang-pt">O projeto tem como objetivo elaborar um mapa digital empresarial da cidade de Cataguases, reunindo e disponibilizando informações sobre a localização, histórico e funcionamento das empresas do município. A iniciativa busca valorizar a memória e a relevância do setor produtivo local, promover maior visibilidade às empresas, facilitar o acesso da comunidade a dados organizados e contribuir para o fortalecimento da identidade econômica e social de Cataguases.</p>
-                            </div>
-                            <div class="info-block">
-                                <h3 class="title">Etapas do Projeto</h3>
-                                <p id="description2" class="description lang-pt">1. Levantamento das Empresas<br>
-                                    2. Construção do Mapa Digital Empresarial<br>
-                                    3. Organização e Validação das Informações<br>
-                                    4. Disponibilização do Mapa Digital<br>
-                                    5. Apresentação Final</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
     <div class="footer">
         <p id="link-footer">&copy; Tecnologia em Processos Gerenciais 2025. Todos os direitos reservados.</p>
     </div>

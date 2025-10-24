@@ -1,3 +1,11 @@
+body{
+    justify-content: center !important;
+    background-image: url('../media/colegiobg.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
 #sobre-modal.custom-modal-overlay {
     z-index: 0 !important;
 }
@@ -53,7 +61,7 @@
 
 .card-info-section {
     flex: 2;
-    padding: 30px;
+    padding: 80px;
     display: flex;
     flex-direction: column;
 }
