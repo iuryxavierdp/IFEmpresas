@@ -40,46 +40,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// --- Novo Código para Abrir o Modal 'Sobre o Projeto' ---
+// --- Código para Trocar o Iframe na Navegação ---
+
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Pega os elementos do DOM
     const linkSobre = document.getElementById('link-sobre');
-    const sobreModal = document.getElementById('sobre-modal');
+    const linkInicio = document.getElementById('link-inicio');
+    const mapFrame = document.getElementById('br-map');
 
-    // Função para fechar o modal (reutiliza a lógica do mapa)
-    function fecharModal() {
-        if (sobreModal) {
-            sobreModal.style.display = 'none';
-        }
-    }
-    
-    // Função para abrir o modal
-    function abrirModal() {
-        if (sobreModal) {
-            sobreModal.style.display = 'flex';
-        }
+    // 2. Define o arquivo HTML de destino
+    const urlMapa = 'mapa.html'; // URL padrão do mapa
+    const urlSobre = 'sobre.html'; // URL do novo iframe 'Sobre o Projeto'
+
+    // 3. Função para mudar o src do iframe
+    function trocarIframe(url) {
+        // Altera o src (a origem) do iframe principal
+        mapFrame.src = url;
     }
 
-    // 1. Clique no link "Sobre o Projeto"
-    if (linkSobre) {
-        linkSobre.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            abrirModal();
-        });
-    }
+    // 4. Adiciona o evento de clique ao link 'Sobre o Projeto'
+    linkSobre.addEventListener('click', (e) => {
+        e.preventDefault(); // Impede o link de navegar para '#'
+        trocarIframe(urlSobre);
+    });
 
-    // 2. Clique no 'X' ou fora do modal para fechar (Requer que o botão 'X' no HTML chame closeModal(this) ou fecharModal())
-    // O seu HTML do 'sobre.html' já tem: <button class="custom-modal-close" onclick="closeModal(this)">&times;</button>
-    // Precisamos garantir que o clique no overlay feche.
-
-    if (sobreModal) {
-        // Fecha ao clicar no overlay
-        sobreModal.addEventListener('click', (event) => {
-            if (event.target === sobreModal) {
-                fecharModal();
-            }
-        });
-        
-        // Se a função closeModal estiver no escopo global (e está no modal.js), 
-        // o botão 'X' já deve funcionar.
-    }
+    // 5. Adiciona o evento de clique ao link 'Início' (para voltar ao mapa)
+    linkInicio.addEventListener('click', (e) => {
+        e.preventDefault(); // Impede o link de navegar para '#'
+        trocarIframe(urlMapa);
+    });
 });

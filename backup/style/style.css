@@ -229,22 +229,13 @@ body {
     background-color: rgba(255, 255, 255, 0.7); 
 }
 .custom-modal-overlay {
-    /* Garante que o modal ocupe a tela inteira */
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Centraliza o modal horizontal e verticalmente */
-    display: flex;
-    justify-content: center;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex; 
     align-items: center;
-    /* Adiciona a cor de fundo com transparência */
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 9999; /* Garante que ele esteja acima de tudo */
-    /* Permite rolagem do overlay, se o modal for maior que a tela */
-    overflow-y: auto; 
-    padding: 20px 0;
+    justify-content: center;
+    z-index: 9999;
 }
 
 .custom-modal {
@@ -259,12 +250,6 @@ body {
     position: relative;
     
     animation: modalIn 0.2s;
-    max-width: 90%; 
-    max-height: 95%; 
-    /* Permite rolagem interna do conteúdo do modal, se necessário */
-    overflow-y: auto; 
-    /* Adicione um padding interno para o conteúdo não tocar as bordas */
-    padding: 0;
 }
 
 .custom-modal-content {
@@ -620,4 +605,3 @@ input.check-toggle-round-flat:checked + label:after {
     color: var(--secundaria);
     text-decoration: underline;
 }
-
