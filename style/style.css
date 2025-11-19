@@ -247,7 +247,7 @@ body {
     max-height: 80vh;
     width: 90vw;
     padding: 0;
-    overflow: hidden;
+    overflow-y: scroll;
     position: relative;
     
     animation: modalIn 0.2s;
@@ -294,6 +294,7 @@ body {
     display: flex;
     align-items: center; 
     justify-content: space-between; 
+    position: sticky;
 }
 
 .custom-modal-close {
