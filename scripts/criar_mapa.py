@@ -5,8 +5,8 @@ from branca.element import IFrame
 #dir = 'C:/Users/Iury/Desktop/IF/ProjetoMapa'
 # dir = 'F:\IF\ProjetoMapa'
 dir = 'C:/Users/Iury/Desktop/Nova pasta'
-df_empresas = pd.read_excel(f'{dir}/dados/empresas.xlsx', sheet_name=0)
-df_empresas_en = pd.read_excel(f'{dir}/dados/empresas_en.xlsx', sheet_name=0)
+df_empresas = pd.read_excel(f'{dir}/dados/empresa.xlsx', sheet_name=0)
+df_empresas_en = pd.read_excel(f'{dir}/dados/empresa_en.xlsx', sheet_name=0)
 
 df_empresas = df_empresas.rename(columns={
     'NOME_EMPRESA': 'nome',
@@ -197,4 +197,5 @@ mapa.get_root().html.add_child(fl.Element(js_script))
 mapa.save(f'{dir}//mapa.html')
 
 print("Mapa salvo como 'mapa.html'")
+
 print(len(df_combinado),"empresas cadastradas")
