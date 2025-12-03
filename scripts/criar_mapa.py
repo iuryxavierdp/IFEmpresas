@@ -2,10 +2,9 @@ import pandas as pd
 import folium as fl 
 from branca.element import IFrame
 
-#dir = 'C:/Users/Iury/Desktop/IF/ProjetoMapa'
+dir = 'C:/Users/Iury/Desktop/IFEmpresas'
 #dir = 'F:\IF\ProjetoMapa'
-#dir = 'C:/Users/Iury/Desktop/Nova pasta'
-dir = '/workspaces/IFEmpresas'
+#dir = 'C:/Users/jumar/OneDrive/Documentos'
 df_empresas = pd.read_excel(f'{dir}/dados/empresa.xlsx', sheet_name=0)
 df_empresas_en = pd.read_excel(f'{dir}/dados/empresa_en.xlsx', sheet_name=0)
 
@@ -55,7 +54,7 @@ mapa = fl.Map(
     attr= attr
 )
 
-with open('modal_template.html', 'r', encoding='utf-8') as f:
+with open(f'{dir}/scripts/modal_template.html', 'r', encoding='utf-8') as f:
     template_html = f.read()
 
 modal_html = ""

@@ -17,8 +17,8 @@ def traduzir_campo(texto, idioma_destino='en'):
         print(f"Erro ao traduzir: '{texto}'. Erro: {e}")
         return texto
 
-ARQUIVO_ORIGEM = 'dados/empresas.xlsx'
-ARQUIVO_DESTINO = 'dados/empresas_en.xlsx'
+ARQUIVO_ORIGEM = 'C:/Users/jumar/OneDrive/Documentos/dados/empresa.xlsx'
+ARQUIVO_DESTINO = 'C:/Users/jumar/OneDrive/Documentos/dados/empresa_en.xlsx'
 
 COLUNAS_PARA_TRADUZIR = [
     'SEGMENTO_DE_ATUAÇÃO', 

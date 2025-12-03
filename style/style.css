@@ -247,7 +247,7 @@ body {
     max-height: 80vh;
     width: 90vw;
     padding: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     position: relative;
     
     animation: modalIn 0.2s;
