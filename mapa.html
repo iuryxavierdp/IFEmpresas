@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_6b2e5bbfed4c257b0909b0ebea982fe3 {
+                #map_7f8584e5c139ae3b44ea4736df76d632 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -1094,7 +1094,7 @@ Mata</span></span>
                     
                     <div class="info-item">
                         <i class="fas fa-award"></i>
-                        <span>Awards/Recognitions: <span class="info-highlight">nan</span></span>
+                        <span>Awards/Recognitions: <span class="info-highlight">Unknown</span></span>
                     </div>
                     
                     <div class="info-item">
@@ -1325,7 +1325,7 @@ body {
 
 .custom-modal-title {
     margin: 0;
-    #font-size: 25px;
+    font-size: 25px;
     color: #222;
     font-weight: 600;
 }
@@ -1561,55 +1561,44 @@ input.check-toggle-round-flat + label:after {
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
 }
-/* ================================================= */
-/* ESTILO GERAL PARA O BOTÃO HAMBÚRGUER (MOBILE) */
-/* ================================================= */
+
 .menu-toggle {
-    display: none; /* Esconde o botão por padrão (desktop) */
+    display: none; 
     background: none;
     border: none;
     color: white;
     font-size: 24px;
     cursor: pointer;
-    z-index: 1001; /* Fica acima de tudo */
+    z-index: 1001; 
 }
-
-/* ================================================= */
-/* MEDIA QUERY: ATIVAR MENU HAMBÚRGUER (Max-width 768px) */
-/* ================================================= */
 
 @media (max-width: 768px) {
     
-    /* 1. MOSTRAR O BOTÃO HAMBÚRGUER */
     .menu-toggle {
-        display: block; /* Mostra o botão em telas pequenas */
-        /* margin-right: 30px; */
+        display: block; 
         width: 48px;
         height: 48px;
         padding: 0;
     }
 
-    /* 2. OCULTAR O MENU DE NAVEGAÇÃO POR PADRÃO */
     .navigation {
         /* display: none; */
         visibility: hidden;
-        /* Estilo da navegação quando aberta (Menu 'Side Drawer') */
         position: fixed;
-        top: 0; /* Começa no topo */
+        top: 0; 
         left: 0;
         transform: translateX(-100%); 
         transition: transform 0.3s ease-in-out, visibility 0s 0.3s;
         /* height: 100%; */
         width: 30%;
         background-color: var(--primaria);
-        flex-direction: column; /* Organiza os links verticalmente */
+        flex-direction: column;
         padding: 25px;
         margin-top: 56px;;
         box-shadow: 2px 2px 5px rgba(0,0,0,0.5); 
         z-index: 1000;
-        overflow-y: auto; /* Adiciona scroll se o menu for muito grande */
+        overflow-y: auto; 
         display: flex;
-        /* Centraliza o conteúdo verticalmente */
         align-items: center; 
         gap: 10px;
         border-radius: 0 0 20px;
@@ -1629,17 +1618,12 @@ input.check-toggle-round-flat:checked + label:after {
         margin-bottom: 0; 
     }
 
-    /* 4. CLASSE PARA MOSTRAR O MENU (Adicionada pelo JS) */
     .navigation.is-open {
         visibility: visible;
         transform: translateX(0); 
         transition-delay: 0s;
     }
-    
-    /* 5. Ajuste do Logo (do exemplo anterior) */
-  
-    
-    /* 6. Ajuste do Header (opcional) */
+
     .header {
         height: 50px;
         /* padding: 0 10px; */
@@ -1651,23 +1635,15 @@ input.check-toggle-round-flat:checked + label:after {
     }
 }
 
-/* ================================================= */
-/* ESTILOS DA MODAL: CONTEÚDO E INFORMAÇÕES */
-/* ================================================= */
-
-/* Espaçamento geral do conteúdo */
 .custom-modal-content {
     padding: 15px 20px;
-    /* Ajuste o padding conforme o tamanho final da sua modal */
 }
 
-/* Estilo para a seção de história/descrição */
 .custom-modal-history {
     font-size: 0.95em;
     line-height: 1.5;
     margin-bottom: 20px;
-    color: #333; /* Cor escura para leitura */
-    /* Se a história for longa, você pode adicionar um border-bottom sutil aqui: */
+    color: #333;
     /* border-bottom: 1px dashed #ddd; */ 
     /* padding-bottom: 15px; */
 }
@@ -1675,12 +1651,11 @@ input.check-toggle-round-flat:checked + label:after {
 .modal-info-pt,
 .modal-info-en {
     display: grid;
-    grid-template-columns: 1fr; /* Coluna única (ideal para mobile) */
-    gap: 12px; /* Espaço entre as linhas de informação */
+    grid-template-columns: 1fr;
+    gap: 12px;
     width: 100%;
 }
 
-/* Estilo de cada linha de informação (ícone + texto) */
 .info-item {
     display: flex;
     align-items: center;
@@ -1688,12 +1663,11 @@ input.check-toggle-round-flat:checked + label:after {
     line-height: 1.4;
 }
 
-/* Estilo dos ícones */
 .info-item i {
-    color: var(--secundaria); /* Usa a cor secundária para os ícones */
+    color: var(--secundaria);
     margin-right: 12px;
     font-size: 1.1em;
-    min-width: 20px; /* Garante que os ícones fiquem alinhados */
+    min-width: 20px;
     text-align: center;
 }
 
@@ -1701,25 +1675,18 @@ input.check-toggle-round-flat:checked + label:after {
     font-weight: bold;
 }
 
-/* Estilo de destaque para os valores das variáveis */
 .info-highlight {
     font-weight: normal !important;
-    color: var(--primaria); /* Usa a cor primária para destacar o valor */
+    color: var(--primaria); 
 }
 
-/* 2. Estilo do link em si */
 .modal-address-group .map-link {
-    
-    /* ESSENCIAL: Faz o link ocupar toda a largura do seu contêiner (<p>) */
     display: block; 
-    
-    /* Mantém o estilo de texto limpo */
     text-decoration: none;
     color: inherit; 
     transition: color 0.2s;
 }
 
-/* 3. Efeito ao passar o mouse */
 .modal-address-group .map-link:hover {
     color: var(--secundaria);
     text-decoration: underline;
@@ -1728,7 +1695,6 @@ input.check-toggle-round-flat:checked + label:after {
     </style>
     
 <script>
-    // FUNÇÃO INJETADA PARA TRADUZIR O CONTEÚDO DO MAPA/MODAL (AGORA CORRETA)
     function mudarIdioma(isEnglish) {
         var ptElements = document.querySelectorAll('.lang-pt');
         var enElements = document.querySelectorAll('.lang-en');
@@ -1776,14 +1742,14 @@ input.check-toggle-round-flat:checked + label:after {
     });
 </script>
     
-            <div class="folium-map" id="map_6b2e5bbfed4c257b0909b0ebea982fe3" ></div>
+            <div class="folium-map" id="map_7f8584e5c139ae3b44ea4736df76d632" ></div>
         
 </body>
 <script>
     
     
-            var map_6b2e5bbfed4c257b0909b0ebea982fe3 = L.map(
-                "map_6b2e5bbfed4c257b0909b0ebea982fe3",
+            var map_7f8584e5c139ae3b44ea4736df76d632 = L.map(
+                "map_7f8584e5c139ae3b44ea4736df76d632",
                 {
                     center: [-21.387807, -42.69678],
                     crs: L.CRS.EPSG3857,
@@ -1800,7 +1766,7 @@ input.check-toggle-round-flat:checked + label:after {
 
         
     
-            var tile_layer_e071bc3df833b704cc4b9955e7a8efc6 = L.tileLayer(
+            var tile_layer_b79bd3c4eaf1ec0f0a0c31bc88da590a = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -1817,17 +1783,17 @@ input.check-toggle-round-flat:checked + label:after {
             );
         
     
-            tile_layer_e071bc3df833b704cc4b9955e7a8efc6.addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            tile_layer_b79bd3c4eaf1ec0f0a0c31bc88da590a.addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var marker_de6b4b277f35ebbc90b9fe1919e25318 = L.marker(
+            var marker_e4bbc0498d43857cfaca1db74d2367d6 = L.marker(
                 [-21.3877085909707, -42.6941719359324],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_242f42f7e9b36cb8cb76d8621650dc32 = L.divIcon({
+            var div_icon_507f6bc05146ad02dbf53563f552c910 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-0\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Energisa\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Energisa\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -1837,17 +1803,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_de6b4b277f35ebbc90b9fe1919e25318.setIcon(div_icon_242f42f7e9b36cb8cb76d8621650dc32);
+                marker_e4bbc0498d43857cfaca1db74d2367d6.setIcon(div_icon_507f6bc05146ad02dbf53563f552c910);
             
     
-            var marker_410485a03b1eb84d3a52f0b99dbf32cc = L.marker(
+            var marker_6b009940240b752037538d78290e0a17 = L.marker(
                 [-21.4071436278473, -42.6745858186452],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_bc91d2fd112caae30576260a12d46801 = L.divIcon({
+            var div_icon_447f8b79d09267b78645d7f0e3f9e75d = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-1\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Miba \n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Miba \n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -1857,17 +1823,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_410485a03b1eb84d3a52f0b99dbf32cc.setIcon(div_icon_bc91d2fd112caae30576260a12d46801);
+                marker_6b009940240b752037538d78290e0a17.setIcon(div_icon_447f8b79d09267b78645d7f0e3f9e75d);
             
     
-            var marker_e33bd15125414c6bca4d59433d05d1d4 = L.marker(
+            var marker_c4fc42ce32334571ff93a4b9e1202c94 = L.marker(
                 [-21.3909432057039, -42.6930428478218],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_02b28a8a9775dff01a662b2722127ffa = L.divIcon({
+            var div_icon_992c494d0e3fb38a35b3211742e9736a = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-2\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Mais Energia Solar\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Mais Energia Solar\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -1877,17 +1843,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_e33bd15125414c6bca4d59433d05d1d4.setIcon(div_icon_02b28a8a9775dff01a662b2722127ffa);
+                marker_c4fc42ce32334571ff93a4b9e1202c94.setIcon(div_icon_992c494d0e3fb38a35b3211742e9736a);
             
     
-            var marker_5e3d0c2364288fb7ed94d19ed8ce9513 = L.marker(
+            var marker_b8ebbfbdf2ad8fdd7e22255648d9ab16 = L.marker(
                 [-21.392621051068, -42.6938404230373],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_8288cd9182514a943deb908bd1d6f115 = L.divIcon({
+            var div_icon_c20a148c04be42c4d3387cbf364ead18 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-3\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Industrial Cataguases\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Industrial Cataguases\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -1897,17 +1863,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_5e3d0c2364288fb7ed94d19ed8ce9513.setIcon(div_icon_8288cd9182514a943deb908bd1d6f115);
+                marker_b8ebbfbdf2ad8fdd7e22255648d9ab16.setIcon(div_icon_c20a148c04be42c4d3387cbf364ead18);
             
     
-            var marker_9ff48566e769c24bac790d4a4a91da69 = L.marker(
+            var marker_07afee5a000a884e0fed140539062fd9 = L.marker(
                 [-21.3862116993511, -42.6813925609733],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_a108e3779501e5168684a93fccc26cb6 = L.divIcon({
+            var div_icon_47e63683d4c377cce8aa0999ec98d2c3 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-4\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Hidroazul\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Hidroazul\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -1917,17 +1883,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_9ff48566e769c24bac790d4a4a91da69.setIcon(div_icon_a108e3779501e5168684a93fccc26cb6);
+                marker_07afee5a000a884e0fed140539062fd9.setIcon(div_icon_47e63683d4c377cce8aa0999ec98d2c3);
             
     
-            var marker_8d88929b547c53b1608eb11d1cdf4dcd = L.marker(
+            var marker_85dae14968867eaa52abffebcd1d9a44 = L.marker(
                 [-21.3853296909594, -42.6903378882941],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_e88006f809cacdd2850363305e55d8b7 = L.divIcon({
+            var div_icon_6b8c4fe9fc9b47cf6af7eb74c7dcc40e = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-5\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            SEDEGI\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            SEDEGI\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -1937,17 +1903,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_8d88929b547c53b1608eb11d1cdf4dcd.setIcon(div_icon_e88006f809cacdd2850363305e55d8b7);
+                marker_85dae14968867eaa52abffebcd1d9a44.setIcon(div_icon_6b8c4fe9fc9b47cf6af7eb74c7dcc40e);
             
     
-            var marker_67d7530054aa99a15dea0e5da6defacf = L.marker(
+            var marker_83bc27c059cf93a60f10d5619fb4bafa = L.marker(
                 [-21.3799180799407, -42.6906470995146],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_d97583871f5d55097c83090ee279a50c = L.divIcon({
+            var div_icon_cc562580d0bf71d9f94b41de418d9230 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-6\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Casa Mattos\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Casa Mattos\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -1957,17 +1923,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_67d7530054aa99a15dea0e5da6defacf.setIcon(div_icon_d97583871f5d55097c83090ee279a50c);
+                marker_83bc27c059cf93a60f10d5619fb4bafa.setIcon(div_icon_cc562580d0bf71d9f94b41de418d9230);
             
     
-            var marker_9bc4007e4fa06b6a35d3e85d20e09290 = L.marker(
+            var marker_b49db07184ccfaf1c47cd684a8f3c4ed = L.marker(
                 [-21.4074040532181, -42.683095259235],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_4a87c9e9d72c16f9054b73c48ad662ac = L.divIcon({
+            var div_icon_56c7af170e42562a4412aa1b112b1ebe = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-7\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            GM2\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            GM2\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -1977,17 +1943,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_9bc4007e4fa06b6a35d3e85d20e09290.setIcon(div_icon_4a87c9e9d72c16f9054b73c48ad662ac);
+                marker_b49db07184ccfaf1c47cd684a8f3c4ed.setIcon(div_icon_56c7af170e42562a4412aa1b112b1ebe);
             
     
-            var marker_983f58053e590ae113fd9f8d2b36eee3 = L.marker(
+            var marker_f814d7e8a68b5ed9ddd64fd667da2795 = L.marker(
                 [-21.3875870108647, -42.6929887537211],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_4fcb19cbd0390f48429751d9957891e1 = L.divIcon({
+            var div_icon_090b60943935a76caa2d707fe541c5c1 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-8\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            P\u00e3o Nosso Com Caf\u00e9\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            P\u00e3o Nosso Com Caf\u00e9\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -1997,17 +1963,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_983f58053e590ae113fd9f8d2b36eee3.setIcon(div_icon_4fcb19cbd0390f48429751d9957891e1);
+                marker_f814d7e8a68b5ed9ddd64fd667da2795.setIcon(div_icon_090b60943935a76caa2d707fe541c5c1);
             
     
-            var marker_2772f5ddbf50dd545acd6ffb47033830 = L.marker(
+            var marker_7aaac268dffa1b2b0a89ae1594912aee = L.marker(
                 [-21.4071550414189, -42.6808175339905],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_8128d6f0f044447bd270a5b39f416eef = L.divIcon({
+            var div_icon_09eb1e459c86373d89c130f97f68ff32 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-9\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Serra Minas - Biscoito L\u00edder de Minas\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Serra Minas - Biscoito L\u00edder de Minas\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -2017,17 +1983,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_2772f5ddbf50dd545acd6ffb47033830.setIcon(div_icon_8128d6f0f044447bd270a5b39f416eef);
+                marker_7aaac268dffa1b2b0a89ae1594912aee.setIcon(div_icon_09eb1e459c86373d89c130f97f68ff32);
             
     
-            var marker_e18fca05cd78b10400d88eb7c9d5d832 = L.marker(
+            var marker_d34391d2a017fc6712f61a15e10cc6d4 = L.marker(
                 [-21.406252, -42.671813],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_38835582dc38e1bb03732fbcb330f8bd = L.divIcon({
+            var div_icon_ace07b7096496b5ef403e3a7a970c33b = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-10\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Desert Wear\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Desert Wear\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -2037,17 +2003,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_e18fca05cd78b10400d88eb7c9d5d832.setIcon(div_icon_38835582dc38e1bb03732fbcb330f8bd);
+                marker_d34391d2a017fc6712f61a15e10cc6d4.setIcon(div_icon_ace07b7096496b5ef403e3a7a970c33b);
             
     
-            var marker_f2753d3b58f0663b54d859684afd5a0c = L.marker(
+            var marker_f7d7d777c71fd53d42e39a4bb3dd7d9f = L.marker(
                 [-21.387983801259796, -42.68976540515492],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_05e1f9bdcd0c0c7fc587a4f51cd59194 = L.divIcon({
+            var div_icon_c93da9d10b41fe355bb8cd2c921c2a20 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-11\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Precis\u00e3o Contabilidade\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Precis\u00e3o Contabilidade\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -2057,17 +2023,17 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_f2753d3b58f0663b54d859684afd5a0c.setIcon(div_icon_05e1f9bdcd0c0c7fc587a4f51cd59194);
+                marker_f7d7d777c71fd53d42e39a4bb3dd7d9f.setIcon(div_icon_c93da9d10b41fe355bb8cd2c921c2a20);
             
     
-            var marker_a50643f029e73cfb4144f6931c5fef3e = L.marker(
+            var marker_f00f7a1140ba78c23afda3f1635b780b = L.marker(
                 [-21.286349814241422, -42.55593686313451],
                 {
 }
-            ).addTo(map_6b2e5bbfed4c257b0909b0ebea982fe3);
+            ).addTo(map_7f8584e5c139ae3b44ea4736df76d632);
         
     
-            var div_icon_6aecadb931afff655b260e8ea224fb01 = L.divIcon({
+            var div_icon_c36ff03e119556a2ac78cfb9332b4ea6 = L.divIcon({
   "html": "\n    \u003cdiv data-modal-id=\"modal-12\" class=\"custom-marker\" \n        style=\"\n            cursor: pointer; \n            display: flex; \n            flex-direction: column; \n            align-items: center; \n            transform: translate(-50%, -100%);\n            width: max-content; \n        \"\u003e\n        \n        \u003ci class=\"fa fa-address-card\" aria-hidden=\"true\"\n            style=\" \n                font-size: 24px; \n                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); \n                margin-bottom: 6.5px;\n            \"\u003e\n        \u003c/i\u003e\n        \n        \u003cspan class=\"lang-pt\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n            \"\u003e\n            Doces Dell\u00e9\n        \u003c/span\u003e\n        \u003cspan class=\"lang-en\"\n            style=\"\n                font-size: 10px; \n                color: #1f1f1f; \n                background: #fff; \n                padding: 1px 4px; \n                border-radius: 3px; \n                margin-top: -5px; \n                box-shadow: 0 1px 3px rgba(0,0,0,0.3); \n                font-weight: bold; \n                white-space: nowrap;\n                display: none; /* Esconde o nome em EN por padr\u00e3o */\n            \"\u003e\n            Doces Dell\u00e9\n        \u003c/span\u003e\n    \u003c/div\u003e\n    ",
   "iconAnchor": [
 0,
@@ -2077,7 +2043,7 @@ input.check-toggle-round-flat:checked + label:after {
 });
         
     
-                marker_a50643f029e73cfb4144f6931c5fef3e.setIcon(div_icon_6aecadb931afff655b260e8ea224fb01);
+                marker_f00f7a1140ba78c23afda3f1635b780b.setIcon(div_icon_c36ff03e119556a2ac78cfb9332b4ea6);
             
 </script>
 </html>
