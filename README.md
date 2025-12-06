@@ -8,7 +8,7 @@ Cada etapa deste projeto — do levantamento minucioso das empresas à criação
 Desenvolvido pelos alunos Iury Xavier e Jumara Gonçalves sob a orientação da Professora Josimar Gonçalves Ribeiro, como parte da disciplina de Inglês Instrumental (2º Período de Tecnologia em Processos Gerenciais - IF Sudeste MG -Campus Avançado Cataguases).
 
 ## 🌐 Redes Sociais:
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/@iuryxavierdp) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/IuryX2) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:Iuryxavierdp@gmail.com) 
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/iuryxavierdp) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/IuryX2) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:Iuryxavierdp@gmail.com) 
 
 # 💻 Tech Stack:
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
