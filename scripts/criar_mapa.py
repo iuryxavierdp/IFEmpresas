@@ -85,13 +85,12 @@ for index, row in df_combinado.iterrows():
             width: max-content; 
         ">
         
-        <i class="fa fa-address-card" aria-hidden="true"
-            style=" 
-                font-size: 24px; 
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-                margin-bottom: 6.5px;
-            ">
-        </i>
+        <svg width="20" height="30" viewBox="0 0 30 40"
+             style="filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3)); margin-bottom: 6.5px;">
+            <path fill="#EA4335" stroke="#B23121" stroke-width="2"
+                  d="M15 2C8.4 2 3 7.4 3 14c0 9.4 12 23 12 23s12-13.6 12-23c0-6.6-5.4-12-12-12z"/>
+            <circle cx="15" cy="14" r="4" fill="#ffffff"/>
+        </svg>
         
         <span class="lang-pt"
             style="
