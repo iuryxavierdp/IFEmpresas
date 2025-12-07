@@ -4,6 +4,7 @@ from branca.element import IFrame
 
 #Mudar o diretório aqui:
 dir = 'C:/Users/Iury/Desktop/IFEmpresas'
+# dir = 'C:/xampp/htdocs/IFEmpresas'
 
 df_empresas = pd.read_excel(f'{dir}/dados/empresa.xlsx', sheet_name=0)
 df_empresas_en = pd.read_excel(f'{dir}/dados/empresa_en.xlsx', sheet_name=0)
