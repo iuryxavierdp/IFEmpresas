@@ -5,7 +5,7 @@ Ao identificar, organizar e apresentar dados relevantes sobre a localização, h
 
 Cada etapa deste projeto - do levantamento minucioso das empresas à criação do mapa digital interativo - reflete o compromisso com a precisão das informações e com a construção de um registro que permaneça útil ao longo do tempo. Além disso, o caráter contínuo e expansível da plataforma garante que novas empresas e mudanças no setor produtivo possam ser incorporadas, mantendo viva a proposta de atualização e inovação constante.
 
-Desenvolvido pelos alunos Iury Xavier e Jumara Gonçalves sob a orientação da Professora Josimar Gonçalves Ribeiro, como parte da disciplina de Inglês Instrumental (2º Período de Tecnologia em Processos Gerenciais - IF Sudeste MG -Campus Avançado Cataguases).
+Desenvolvido pelos alunos Iury Xavier e Jumara Gonçalves, sob a orientação dos professores Josimar Gonçalves Ribeiro e Thays Lacerda Correa como projeto final para a disciplina de Inglês Instrumental oferecida aos estudantes do curso de graduação em Tecnologia em Processos Gerenciais.
 
 ## 🌐 Redes Sociais:
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/iuryxavierdp) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/IuryX2) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:Iuryxavierdp@gmail.com) 
